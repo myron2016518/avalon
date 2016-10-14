@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ffzx.wechat</groupId>
+    <artifactId>wechat</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.ffzx.wechat.core</groupId>
+  <artifactId>wechat-core</artifactId>
+  <version>${wechat.version}</version>
+  <name>wechat-core</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+<dependencies>
+		<!-- framework -->
+		<dependency>
+			<groupId>com.ffzx.framework</groupId>
+			<artifactId>framework</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>		    
+	        <groupId>com.ff</groupId>
+	        <artifactId>common</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+		<!-- pms-api引用 -->
+	    <dependency>
+	    	<groupId>com.ffzx.permission.api</groupId>
+	    	<artifactId>pms-api</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	   <!-- 基础数据api -->
+	   <dependency>		    
+	        <groupId>com.ffzx.base-data.api</groupId>
+	        <artifactId>base-data-api</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ffzx.promotion.api</groupId>
+			<artifactId>prms-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+			<!--uc api -->
+		<dependency>
+		  <groupId>com.ffzx.uc.api</groupId>
+		  <artifactId>uc-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 商品-api引用 -->
+		<dependency>
+		  <groupId>com.ffzx.commodity.api</groupId>
+  			<artifactId>cims-api</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--oms api -->
+		<dependency>
+		  <groupId>com.ffzx.order.api</groupId>
+		  <artifactId>order-api</artifactId>
+			<version>1.0.2-SNAPSHOT</version>
+		</dependency>
+		<!-- app-server-api -->
+		<dependency>
+			<groupId>com.ffzx.appserver.api</groupId>
+			<artifactId>app-server-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- wms-api引用 -->
+		<dependency>
+			<groupId>com.ffzx.wms.api</groupId>
+			<artifactId>wms-api</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>  
+		<!-- json lib -->
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib-ext-spring</artifactId>
+        </dependency>
+	</dependencies>
+	
+	  
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.m2e</groupId>
+				<artifactId>lifecycle-mapping</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

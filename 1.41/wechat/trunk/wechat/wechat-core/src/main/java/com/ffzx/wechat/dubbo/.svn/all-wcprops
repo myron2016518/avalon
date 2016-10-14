@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/damaichang/!svn/ver/16524/wechat/trunk/wechat/wechat-core/src/main/java/com/ffzx/wechat/dubbo
+END
+ConsumerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/damaichang/!svn/ver/16524/wechat/trunk/wechat/wechat-core/src/main/java/com/ffzx/wechat/dubbo/ConsumerContext.java
+END
+BaseConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/damaichang/!svn/ver/16524/wechat/trunk/wechat/wechat-core/src/main/java/com/ffzx/wechat/dubbo/BaseConsumer.java
+END
+CategoryConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/damaichang/!svn/ver/16524/wechat/trunk/wechat/wechat-core/src/main/java/com/ffzx/wechat/dubbo/CategoryConsumer.java
+END

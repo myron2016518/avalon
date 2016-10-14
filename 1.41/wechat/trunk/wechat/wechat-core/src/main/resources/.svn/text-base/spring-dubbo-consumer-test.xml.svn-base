@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://code.alibabatech.com/schema/dubbo	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">    
+	 <dubbo:reference id="codeRuleApiService" interface="com.ffzx.basedata.api.service.CodeRuleApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"  
+	 url="dubbo://192.168.1.126:20976"
+	 />
+	 
+	<dubbo:reference id="sysUserApiService"
+	interface="com.ffzx.permission.api.service.SysUserApiService" timeout="30000"
+	version="1.0" registry="zookeeperClient" protocol="dubbo"  check="false"
+	url="dubbo://192.168.1.126:20970"
+	/>
+
+	<dubbo:reference id="memberCouponApiService"
+		interface="com.ffzx.promotion.api.service.MemberCouponApiService" timeout="30000"
+		version="1.0" registry="zookeeperClient" protocol="dubbo"  check="false"
+		url="dubbo://192.168.1.126:21006"
+		/>
+		<!-- 会员 -->
+	<dubbo:reference id="memberApiService" interface="com.ffzx.member.api.service.MemberApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false"
+	 url="dubbo://192.168.1.126:21012" 
+	 />
+   
+   <!-- 商品 -->
+	 <dubbo:reference id="commodityApiService" interface="com.ffzx.commodity.api.service.CommodityApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"  check="false" 
+	 url="dubbo://192.168.1.126:20982"
+	 />
+	 <!-- 商品sku -->
+	 <dubbo:reference id="commoditySkuApiService" interface="com.ffzx.commodity.api.service.CommoditySkuApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"  check="false" 
+	 url="dubbo://192.168.1.126:20982"
+	 />
+	 
+	 <!-- 活动接口  -->
+	 <dubbo:reference id="activityManagerApiService" interface="com.ffzx.promotion.api.service.ActivityManagerApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"
+	 url="dubbo://192.168.1.126:21006" 
+	 />
+	  <dubbo:reference id="activityCommoditySkuApiService" interface="com.ffzx.promotion.api.service.ActivityCommoditySkuApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"
+	 url="dubbo://192.168.1.126:21006" 
+	 />
+	 <dubbo:reference id="activityCommodityApiService" interface="com.ffzx.promotion.api.service.ActivityCommodityApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" 
+	 url="dubbo://192.168.1.126:21006" 
+	 />
+	 
+	 <!-- 广告接口 -->
+	 <dubbo:reference id="advertApiService" interface="com.ffzx.promotion.api.service.AdvertApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false" 
+	 url="dubbo://192.168.1.126:21006"/>
+	 
+	 <!-- 订单接口 -->
+	 <dubbo:reference id="orderApiService" interface="com.ffzx.order.api.service.OrderApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false" 
+	 url="dubbo://192.168.1.126:20988"
+	 />
+	 
+	  <!-- 会员地址接口 -->
+	 <dubbo:reference id="memberAddressApiService" interface="com.ffzx.member.api.service.MemberAddressApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false" 
+	  url="dubbo://192.168.1.126:21012" 
+	/>
+	 
+	 <!-- 活动接口  -->
+	 <dubbo:reference id="couponApiService" interface="com.ffzx.promotion.api.service.CouponApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"  check="false"
+	 url="dubbo://192.168.1.126:21006" 
+	 />
+	 <!-- 优惠券 -->
+	 
+	 <dubbo:reference id="couponReceiveApiService" interface="com.ffzx.promotion.api.service.CouponReceiveApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"  check="false"
+	 url="dubbo://192.168.1.126:21006"
+	  />
+	 <!-- 地址接口 -->
+	 
+	<dubbo:reference id="addressApiService"
+		interface="com.ffzx.basedata.api.service.AddressApiService" timeout="30000"
+		version="1.0" registry="zookeeperClient" protocol="dubbo" check="false"
+		url="dubbo://192.168.1.126:20976"
+		/>
+   <!-- 数据字段 -->
+	<dubbo:reference id="dictApiService"
+		interface="com.ffzx.basedata.api.service.DictApiService" timeout="30000"
+		version="1.0" registry="zookeeperClient" protocol="dubbo"   check="false"
+		 url="dubbo://192.168.1.126:20976"
+		 />
+		 
+	 <dubbo:reference id="afersaleApplyApiService" interface="com.ffzx.order.api.service.AftersaleApplyApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false"
+	 url="dubbo://192.168.1.126:20988"/>
+	 
+	  <dubbo:reference id="afersaleApplyItemApiService" interface="com.ffzx.order.api.service.AftersaleApplyItemApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false"
+	 url="dubbo://192.168.1.126:20988"/>
+
+	<!-- 类目接口 -->
+	<dubbo:reference id="categoryApiService" interface="com.ffzx.commodity.api.service.CategoryApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo"
+	 url="dubbo://192.168.1.126:20982"
+	 />
+	 <!-- 购物车接口 -->
+	 <dubbo:reference id="shoppingCartApiService" interface="com.ffzx.appserver.api.service.ShoppingCartApiService" timeout="30000"
+        version="1.0" registry="zookeeperClient" protocol="dubbo" check="false"
+        url="dubbo://192.168.1.126:21018"
+        />
+	 <!-- 消息中心接口 -->
+     <dubbo:reference id="memberMessageApiService" interface="com.ffzx.member.api.service.MemberMessageApiService" timeout="30000"
+        version="1.0" registry="zookeeperClient" protocol="dubbo" check="false"
+        url="dubbo://192.168.1.126:21012"
+        />
+	<!--  库存管理接口 -->
+	<dubbo:reference id="stockManagerApiService" interface="com.ffzx.order.api.service.StockManagerApiService"  
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false" 
+	 url="dubbo://192.168.1.126:20988"/>
+	 
+	 	 <!--  活动下单验证-->
+	 <dubbo:reference id="activityCategoryApiService" interface="com.ffzx.promotion.api.service.ActivityCategoryApiService"    
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" 
+	 url="dubbo://192.168.1.126:21006" 
+	 />
+	 
+	 <!--  销量查询对外接口-->
+	 <dubbo:reference id="dailySalesApiService" interface="com.ffzx.order.api.service.DailySalesApiService"    
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false"
+	 url="dubbo://192.168.1.126:20988"/>
+	 	  <!--  配送接口-->
+	<dubbo:reference id="distributionApiService" interface="com.ffzx.wms.api.service.DistributionApiService"    
+	 timeout="30000" version="1.0"  registry="zookeeperClient" protocol="dubbo" check="false"
+	 url="dubbo://192.168.1.126:20994" />
+</beans>

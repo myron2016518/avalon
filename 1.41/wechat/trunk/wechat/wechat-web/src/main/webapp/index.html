@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="非凡之星">
+<meta name="keywords" content="非凡之星">
+<meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1" media="(device-height: 568px)">
+<title>微信商城 - 大麦场</title>
+
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<!-- <link rel="icon" type="image/png" href="base/img/favicon.png"> -->
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<!-- <link rel="icon" sizes="192x192" href="base/img/app-icon72x72@2x.png"> -->
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="非凡之星" />
+<!-- <link rel="apple-touch-icon-precomposed"
+	href="base/img/app-icon72x72@2x.png"> -->
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<!-- <meta name="msapplication-TileImage"
+	content="base/img/app-icon72x72@2x.png"> -->
+<meta name="msapplication-TileColor" content="#0e90d2">
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<style>
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?9vwcte');
+  src:  url('fonts/icomoon.eot?9vwcte#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?9vwcte') format('truetype'),
+    url('fonts/icomoon.woff?9vwcte') format('woff'),
+    url('fonts/icomoon.svg?9vwcte#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ico1:before {
+  content: "\e900";
+}
+.icon-ico2:before {
+  content: "\e901";
+}
+.icon-ico3:before {
+  content: "\e902";
+}
+.icon-ico4:before {
+  content: "\e903";
+}
+.icon-ico5:before {
+  content: "\e904";
+}
+.icon-ico6:before {
+  content: "\e905";
+}
+.icon-ico7 .path1:before {
+  content: "\e906";
+  color: rgb(114, 113, 113);
+}
+.icon-ico7 .path2:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(114, 113, 113);
+}
+.icon-ico7 .path3:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(114, 113, 113);
+}
+.icon-ico7 .path4:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(114, 113, 113);
+}
+.icon-ico7 .path5:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(114, 113, 113);
+}
+.icon-ico7 .path6:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(114, 114, 114);
+}
+.icon-ico7 .path7:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(114, 114, 114);
+}
+.icon-ico7 .path8:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(114, 114, 114);
+}
+.icon-ico7 .path9:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(114, 114, 114);
+}
+.icon-ico7 .path10:before {
+  content: "\e90f";
+  margin-left: -1em;
+}
+.icon-ico8 .path1:before {
+  content: "\e910";
+}
+.icon-ico8 .path2:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-ico9:before {
+  content: "\e912";
+}
+.icon-ico10:before {
+  content: "\e913";
+}
+.icon-ico11:before {
+  content: "\e914";
+}
+.icon-ico12:before {
+  content: "\e915";
+}
+</style>
+<link href="css/mobile.css" rel="stylesheet" type="text/css" />
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="base" class="weui_tab" ms-controller="base">
+	<div class="weui_tab_bd">
+		<div class="hd_download" ms-visible="topAd && page == 'home'"><a href="#" class="Close icon-ico1" ms-click="hideAd()"></a> <img src="images/download_img.jpg" alt=""/> </div>
+
+		<div ms-class-1="homebg: page == 'home'" ms-class-2="centerbody: page != 'home'">
+			<div class="header" style="position:absolute;width:100%;">
+				<div ms-class-1="frame frameScroll" ms-class-2="hd_bar: page != 'home'">
+				  <form >
+					<input name="textfield" type="text" id="textfield" value="搜索你想找的商品名称"  class="hd_search_txt">
+				  </form>
+				  <div class="hd_me"> <a href="javascript:void(0);"><span></span></a> </div>
+				</div>
+			</div>
+			
+			<div id="content" class="content" ms-include-src="page" data-include-rendered="base_rendered"></div>
+		</div>
+
+	</div>		
+
+	<div class="weui_tabbar bottom-menu">
+	  <ul>
+		<li><a href="javascript:void(0);" ms-class="now:page == 'home'" ms-click="go_page('home')"><span class="icon-ico8 titleico"> <span class="path1"></span><span class="path2"></span> </span>
+		  <p>首页</p>
+		  </a></li>
+		<li><a href="javascript:void(0);" ms-class="now:page == 'category'" ms-click="go_page('category')"><span class="icon-ico9 titleico"></span>
+		  <p>分类</p>
+		  </a></li>
+		<li><a href="javascript:void(0);" ms-class="now:page == 'dmc'" ms-click="go_page('dmc')"><span class="icon-ico10 titleico"></span>
+		  <p>大麦场</p>
+		  </a></li>
+		<li><a href="javascript:void(0);" ms-class="now:page == 'cart'" ms-click="go_page('cart')"><span class="icon-ico11 titleico"><em>13</em></span>
+		  <p>购物车</p>
+		  </a></li>
+		<li><a href="javascript:void(0);" ms-class="now:page == 'my'" ms-click="go_page('my')"><span class="icon-ico12 titleico"></span>
+		  <p>我的</p>
+		  </a></li>
+	  </ul>
+	</div>
+	<!--
+	<div class="hide">
+		<div class="hidebody"><a href="#" class="Closeico"><img src="images/Closeico.png" alt=""/></a><img src="images/147420056154506458.png" alt=""/></div>
+	</div>
+	-->
+</div>
+
+	<script>
+		var PATH_PAGE = {
+			home: 'page/home',
+			category: 'page/category',
+			dmc: 'page/dmc',
+			cart: 'page/cart',
+			my: 'page/my',
+			rush2buy: 'page/rush2buy'
+		}
+	</script>
+	<script src="base/js/jquery/jquery.min.js"></script>
+	<script src="base/js/requirejs/require.js"></script>
+	<script src="base/js/base.js"></script>
+
+	<script>
+		$(function(){			
+					
+		})
+	</script>
+</body>
+</html>

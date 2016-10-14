@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+    http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd   
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-4.1.xsd"
+	default-lazy-init="true" default-autowire="byName">	
+
+	<!-- 自动搜索@Controller标注的类 -->
+	<context:component-scan base-package="com.ffzx" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>	
+	
+	<!--避免IE执行AJAX时，返回JSON出现下载文件 -->
+	<bean id="mappingJackson2HttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+				<value>text/json;charset=UTF-8</value>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+		<!-- #################################################################### -->
+	<!-- # 装载属性占位符配置 -->
+	<!-- #################################################################### -->
+	<context:property-placeholder properties-ref="customProperties" />
+	<bean id="customProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean" p:ignoreResourceNotFound="true" p:localOverride="true">
+		<property name="locations">
+			<list>
+				<!-- 标准配置-->
+				<value>classpath*:/application-web.properties</value>		
+				<!--本地开发环境配置-->
+				<value>file:/d:/conf/wechat/application-web.properties</value>
+				<!--服务器生产环境配置-->
+                <value>file:/etc/conf/wechat/application-web.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 这是简单配置，代替bean节点那种显示加载bean的配置方式，可以自动加载必须得如下两个bean -->
+	<!-- <mvc:annotation-driven /> -->
+	<!-- 这是标准配置，可以解决ResponseBody中文乱码问题 -->
+	<bean  class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJackson2HttpMessageConverter" />    <!-- JSON转换器 -->
+			</list>
+		</property>
+	</bean>	
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.ffzx.wechat.interceptor.WechatLoginInterceptor">
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>	
+	
+	<!-- 通过BeanFactoryAware，手动从spring容器获取bean -->
+	<!-- 已经在applicationContext.xml中定义了，这里就不用定义了 -->
+	<!-- <bean class="com.cl.privilege.utils.SpringContextHolder"/> -->
+	
+	<!-- ======================Bean Validation start============================= -->
+	<!-- 指定自己定义的validator -->  
+	<mvc:annotation-driven validator="validator">
+		<!-- 处理responseBody 里面日期类型 -->
+		<mvc:message-converters>
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+							</bean>
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven> 
+	  
+	<!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->  
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">  
+	    <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>  
+	    <!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->  
+	    <property name="validationMessageSource" ref="messageSource"/>  
+	</bean> 
+	 
+	<!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->  
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+	    <property name="basenames">  
+	        <list>  
+	            <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->  
+	            <value>classpath:validationMessages/messages</value>  
+	            <value>classpath:org/hibernate/validator/ValidationMessages</value>  
+	        </list>  
+	    </property>  
+	    <property name="useCodeAsDefaultMessage" value="false"/>  
+	    <property name="defaultEncoding" value="UTF-8"/>  
+	    <property name="cacheSeconds" value="60"/>  
+	</bean>
+	<!-- ======================Bean Validation end============================= -->
+
+	<!-- 配置freeMarker视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer" p:configuration-ref="freeMarkerConfiguration" />
+	<bean id="ftlviewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<!-- 如果配置了这个节点，则视图必须是ftl，redirect等前缀都失效了 -->
+		<!-- <property name="viewNames" value="*.ftl"/> -->
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="cache" value="true" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".ftl" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+	</bean>	
+    
+	<!-- 定义异常解析器 
+	<bean class="com.ffzx.commerce.framework.exception.GenericHandlerExceptionResolver" />
+	
+	<bean class="com.ffzx.commerce.framework.exception.MySimpleExceptionResolver">
+    	<property name="defaultErrorView" value="/error/exception"></property>  
+	    <property name="exceptionMappings">  
+	        <props>  
+	            <prop key="java.lang.Exception">/error/exception</prop>  
+	        </props>  
+	    </property>
+	</bean>
+    -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <property name="defaultEncoding" value="utf-8"></property>   
+        <property name="maxUploadSize" value="10485760000"></property>  
+        <property name="maxInMemorySize" value="40960"></property>  
+    </bean>
+</beans>

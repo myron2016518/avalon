@@ -1,0 +1,55 @@
+#CAS  authentication address
+cas.server.url=http://cas.ffzx.com:8080/cas
+cas.service.url=http://wechat.ffzx.com:8094/wechat-web/index.do
+
+#web root
+web.basepath=/wechat-web
+request.noright.url=/user/noRight.do
+#ZooKeeper
+dubbo.registry.port=21000
+dubbo.registry.address=192.168.2.195:2181
+dubbo.registry.address.client=192.168.2.195:2181
+dubbo.provider.delay=0
+dubbo.provider.timeout=60000
+dubbo.provider.retries=1
+dubbo.consumer.check=false
+dubbo.consumer.timeout=60000
+
+#################################################
+# Redis environment variables
+#################################################
+redis.master.name=mymaster
+redis.master.host=192.168.2.195
+redis.password=ffzx6102
+redis.master.port=6380
+redis.sentinels.n1.host=192.168.2.195
+redis.sentinels.n1.port=26379
+#redis.sentinels.n2.host=192.168.0.12
+#redis.sentinels.n2.port=26379
+#redis.password=rediscluster
+redis.timeout=15000
+redis.pool.minIdle=16
+redis.pool.maxIdle=64
+redis.pool.maxWaitMillis=30000
+redis.pool.testOnCreate=true
+redis.pool.testOnBorrow=true
+redis.pool.testOnReturn=true
+redis.pool.testWhileIdle=true
+redis.pool.maxTotal=400 
+generator.model = wechat
+
+#################################################
+# FTP environment variables
+#################################################
+image.ftp.server=192.168.2.195
+image.ftp.port=21
+image.ftp.username=ftpadmin
+image.ftp.password=ftp2016
+image.ftp.connect.timeout=60000
+image.ftp.local.directory=${java.io.tmpdir}
+
+# image server
+image.web.server=http://192.168.2.195:8081/image-web/commodity-image
+
+#aftersale day
+aftersale.overdue=15

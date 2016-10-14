@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/damaichang/!svn/ver/16525/wechat/trunk/wechat/wechat-core/src/main/resources
+END
+spring-dubbo-consumer-test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/spring-dubbo-consumer-test.xml
+END
+spring-dubbo-core.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/spring-dubbo-core.xml
+END
+logback.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/logback.xml
+END
+spring-dubbo-provider.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/spring-dubbo-provider.xml
+END
+spring-dubbo-consumer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/spring-dubbo-consumer.xml
+END
+application-core.properties
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/damaichang/!svn/ver/16227/wechat/trunk/wechat/wechat-core/src/main/resources/application-core.properties
+END
+application-beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/damaichang/!svn/ver/16525/wechat/trunk/wechat/wechat-core/src/main/resources/application-beans.xml
+END
+mybatis-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/mybatis-config.xml
+END
+applicationContext-redis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/applicationContext-redis.xml
+END
+applicationContext-core.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/damaichang/!svn/ver/15297/wechat/trunk/wechat/wechat-core/src/main/resources/applicationContext-core.xml
+END
+applicationContext-ftp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/damaichang/!svn/ver/14865/wechat/trunk/wechat/wechat-core/src/main/resources/applicationContext-ftp.xml
+END

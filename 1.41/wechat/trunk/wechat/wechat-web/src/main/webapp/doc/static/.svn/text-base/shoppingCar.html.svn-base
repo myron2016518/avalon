@@ -1,0 +1,117 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta name="robots" content="index">
+<meta name="googlebot" content="index">
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大麦场----微信商城</title>
+<meta name="keywords" content="大麦场----微信商城" />
+<meta name="description" content="大麦场----微信商城" />
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<link rel="stylesheet" href="css/demos.css">
+<link rel="stylesheet" href="style.css">
+<link href="css/mobile.css" rel="stylesheet" type="text/css" />
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="weui_tab">
+	<div class="weui_tab_bd"> 
+		<!--内容区-start-->
+		<div class="car">
+		  <div class="carEmpty">
+		  	<span class="icon-ico13 ico-car"></span>
+		  	<p>购物车还是空的</p>
+		  	<a href="#" class="btn-orange">去逛逛吧</a>
+		  </div>
+		  <!--以下是猜你喜欢产品列表-->
+		  <div class="selectedlist">
+		  	<div class="like-title"><h3>猜你喜欢</h3></div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液深层洁净护理洗衣液深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		    <div class="hprolist">
+		      <dl>
+		        <dt><a href="#"><img src="images/img18.jpg" alt=""/>
+		          <div class="name">蓝月亮 深层洁净护理洗衣液(薰衣草) 3kg/瓶</div>
+		          </a></dt>
+		        <dd><a href="#" class="icon-ico7"></a>￥38.90</dd>
+		      </dl>
+		    </div>
+		  </div>
+		  
+		</div>
+		<!--内容区-end-->
+	</div>
+	<div class="weui_tabbar bottom-menu">
+	  <ul>
+	    <li><a href="index.html"><span class="icon-ico8 titleico"></span>
+	      <p>首页</p>
+	      </a></li>
+	    <li><a href="classification.html"><span class="icon-ico9 titleico"></span>
+	      <p>分类</p>
+	      </a></li>
+	    <li><a href="dmc.html"><span class="icon-ico10 titleico"></span>
+	      <p>大麦场</p>
+	      </a></li>
+	    <li><a href="shoppingCar2.html" class="now"><span class="icon-ico11 titleico"><em>13</em></span>
+	      <p>购物车</p>
+	      </a></li>
+	    <li><a href="#"><span class="icon-ico12 titleico"></span>
+	      <p>我的</p>
+	      </a></li>
+	  </ul>
+	</div>
+</div>
+
+
+</body>
+</html>
