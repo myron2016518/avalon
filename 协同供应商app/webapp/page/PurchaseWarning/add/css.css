@@ -1,0 +1,6 @@
+#pagePurchaseWarningadd .search .frame{position:absolute !important;top:0 !important;}
+#pagePurchaseWarningadd .page-content{padding-top:47px;} 
+#pagePurchaseWarningadd .page-content .tab-title > ul > li{text-align: center;width: 25%;padding:0px} 
+#pagePurchaseWarningadd .page-content .tab-title > ul{ width: 100%;}
+#pagePurchaseWarningadd .page-content .weui_tabbar div{    width: 50%;padding: 5px 30px;}
+#pagePurchaseWarningadd .page-content .tab-title .form-group .firsta{      padding-left: 10%;}

@@ -1,0 +1,98 @@
+<div class="page-content" ms-controller="Message/MsgInfo">
+
+	<div ms-repeat="obj">
+		<!-- 订单 -->
+		<div class="msg" ms-if="el.type == 'ORDERNOTICE'" ms-click="goOrderList()">
+			<div class="msg-list">
+				<ul class="msg-order">
+					<li>
+						<div class="msg-text">
+							<h3>{{el.title}}</h3>
+							<span class="msg-date">{{el.createDate | date("yyyy-MM-dd HH:mm")}}</span>
+							<p>{{el.content}}</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 订单 -->
+
+		<!--抢购提醒-->
+		<div class="msg" ms-if="el.type == 'PREORDER'" ms-click="goActivity(el)">
+			<div class="msg-list">
+				<ul class="msg-snapped">
+					<li>
+						<div class="msg-snapped-title">
+						    <p ms-if="el.remarks != null">{{el.remarks}}准时开抢</p>
+							<p ms-if="el.remarks == null">{{el.createDate | date("yyyy-MM-dd HH:mm")}}</p>
+							<div class="snapped-title-div">
+								<span></span>抢购
+							</div>
+						</div>
+						<div class="msg-pro">
+							<a href="javascript:;">
+								<div class="box-img">
+									<img ms-attr-src="img(el.imgPath)">
+								</div>
+								<div class="box-text">
+									<h1>{{el.goodsTitle}}</h1>
+									<p>￥{{el.goodsPrice}}</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--抢购提醒-->
+
+		<!--系统消息-->
+		<div class="msg" ms-if="el.type == 'SYSTEM'">
+			<div class="msg-list">
+				<ul class="msg-order">
+					<li>
+						<div class="msg-text">
+							<h3>{{el.title}}</h3>
+							<span class="msg-date">{{el.createDate | date("yyyy-MM-dd HH:mm")}}</span>
+							<p>{{el.content}}</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--系统消息-->
+
+		<!--活动消息-->
+		<div class="msg" ms-if="el.type == 'PROMOTION'">
+			<div class="msg-list">
+				<ul class="msg-order">
+					<li>
+						<div class="msg-text">
+							<h3>{{el.title}}</h3>
+							<span class="msg-date">{{el.createDate | date("yyyy-MM-dd HH:mm")}}</span>
+							<div class="msg-banner">
+								<img ms-attr-src="img(el.imgPath)">
+							</div>
+							<p>{{el.content}}</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	
+	<!--没消息-->
+	<div class="msg" ms-if="obj.length == 0">
+		<div class="msg-list">
+			<div class="msg-no">
+				<div class="ico-msg-no">
+					<span class="icon-ico54"></span>
+				</div>
+				<p>暂时没有新的消息哦</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+

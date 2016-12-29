@@ -1,0 +1,60 @@
+
+<div class="page-content" ms-controller="ReplenishOrder/Detail">
+	<div style="padding-left:5%;">
+		<dl>
+			<dt></dt>
+			<dd>收货仓库：<span >{{purchaseOrder.warehouseName}}</span></dd>
+			<dd>收货地址：<span >{{purchaseOrder.warehouseAddress}}</span></dd>
+			<dd>联系人：<span >{{purchaseOrder.contact}}</span></dd>
+			<dd>联系电话：<span >{{purchaseOrder.phone}}</span></dd>
+		</dl>
+	</div>
+	
+	<div class="tab-body">
+		<table width="100%" border="1" cellspacing="0" class="altrowstable">
+			<thead>
+			<tr>
+				<th style="width:18%;">商品条码</th>
+				<th style="width:18%;">采购数量</th>
+				<th style="width:18%;">交货数量</th>
+				<th style="width:18%;">待交数量</th>
+				<th style="width:18%;">交货时间</th>
+				<th style="width:10%;">&nbsp;</th>
+			</tr>
+			</thead>
+			<tbody ms-repeat="purchaseOrder.details" >
+			<tr>
+				<td style="width:18%;">{{el.barCode}}</td>
+				<td style="width:18%;">{{el.purchaseQuantity}}</td>
+				<td style="width:18%;">{{el.cStorageQuantity}}</td>
+				<td style="width:18%;">{{el.rStorageQuantity}}</td>
+				<td style="width:18%;">{{el.realityDeliveryDate}}</td>
+				<td style="width:10%;"><a ms-click="toggle()" href="javascript:void(0)" class="icon-scms-ico22"></a></td>
+			</tr>
+			<tr style="display:none">
+				<td colspan="5" class="tab-info">
+					<table class="inner">
+						<tr>
+							<td class="td-left">商品名称：</td>
+							<td class="td-commodity-name"><div>{{el.name}}</div></td>
+						</tr>
+						<tr>
+							<td class="td-left">商品编码：</td>
+							<td>{{el.code}}</td>
+						</tr>
+						<tr>
+							<td class="td-left">规格型号：</td>
+							<td>{{el.specification}}</td>
+						</tr>
+						<tr>
+							<td class="td-left">销售属性：</td>
+							<td>{{el.commodityAttributeValues}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

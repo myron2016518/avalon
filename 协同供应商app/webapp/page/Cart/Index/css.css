@@ -1,0 +1,10 @@
+/* Page CSS */
+#pageCartIndex  #base{padding-bottom:113px;} 
+.ios-10 #pageCartIndex  #base{padding-bottom:0px !important;} 
+.ios-10 #pageCartIndex .wrapper-scroll .selectedlist{padding-bottom:113px !important;} 
+#pageCartIndex .wrapper-scroll{height:100%;overflow:auto;box-sizing: border-box;}
+#pageCartIndex .page-content{height:100%;float:left;width:100%;overflow:auto;box-sizing: border-box;}
+.settlement{z-index:8 !important;}
+
+#pageCartIndex.hide-bottom .settlement{display:none;}
+#pageCartIndex.hide-bottom #base{padding-bottom:0;}

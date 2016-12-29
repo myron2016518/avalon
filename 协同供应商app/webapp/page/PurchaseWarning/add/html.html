@@ -1,0 +1,81 @@
+
+<div class="page-content" ms-controller="PurchaseWarning/add">
+	
+
+	<div style="padding-left:5%;">
+		<dl>
+			<dt></dt>
+			<dd>补货单号：<span >aa</span></dd>
+			<dd>仓库：<span >aa</span></dd>
+			<dd>交货地址：<span >aa</span></dd>
+			<dd>交货时间：
+				<span >
+					<input type="text" id='datetime-picker'/>
+					<script>
+					  $("#datetime-picker").datetimePicker();
+					</script>
+				</span>
+			</dd>
+			<dd>联系人：<span >aa</span></dd>
+			<dd>联系电话：<span >aa</span></dd>
+		</dl>
+	</div>
+	
+	<div class="tab-body">
+		<table width="100%" border="1" cellspacing="0" class="altrowstable">
+			<thead>
+			<tr>
+				<th style="width:10%;">&nbsp;</th>
+				<th style="width:20%;">销售数量</th>
+				<th style="width:20%;">退货数量</th>
+				<th style="width:20%;">实销数量</th>
+				<th style="width:10%;">&nbsp;</th>
+			</tr>
+			</thead>
+			<tbody ms-repeat="obj" >
+			<tr>
+				<td style="padding-left: 3%;width:10%;">
+					<div class="check_box ffwx_check_box" >
+						<label>
+							<input type="radio" name="checkbox" class="dmc_check_box" ms-attr-value="elem.id" ms-disabled='elem.status==0' ms-click="check_item(elem.id)" />
+							<i class="weui_icon_checked ffwx_icon_checked"></i>
+						</label>
+					</div>
+				</td>
+				<td style="width:20%;">{{el.sales}}</td>
+				<td style="width:20%;"> <input style="width: 3rem;" type="text" ms-duplex="el.salesReturn" /></td>
+				<td style="width:20%;">{{el.salesReal}}</td>
+				<td style="width:10%;"><a ms-click="toggle()" href="javascript:void(0)" class="icon-scms-ico22"></a></td>
+			</tr>
+			<tr style="display:none">
+				<td colspan="5" class="tab-info">
+					<table class="inner">
+						<tr>
+							<td class="td-left">商品名称：</td>
+							<td class="td-commodity-name"><div>{{el.name}}</div></td>
+						</tr>
+						<tr>
+							<td class="td-left">商品编码：</td>
+							<td>{{el.code}}</td>
+						</tr>
+						<tr>
+							<td class="td-left">规格型号：</td>
+							<td>{{el.specification}}</td>
+						</tr>
+						<tr>
+							<td class="td-left">销售属性：</td>
+							<td>{{el.attributes}}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="weui_tabbar bottom-menu" >
+	  <div class="dmc-btn"> <a href="javascript:void(0);"  class="dmc-btn-positive">删除</a></div>
+	  <div class="dmc-btn"> <a href="javascript:void(0);"  class="dmc-btn-positive">保存</a></div>
+	</div>  
+
+</div>
+

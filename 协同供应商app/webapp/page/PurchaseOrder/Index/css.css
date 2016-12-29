@@ -1,0 +1,4 @@
+#pagePurchaseOrderIndex .search .frame{position:absolute !important;top:0 !important;}
+#pagePurchaseOrderIndex .page-content{padding-top:47px;} 
+#pagePurchaseOrderIndex .page-content .tab-title > ul > li{text-align: center;width: 33%;padding:0px} 
+#pagePurchaseOrderIndex .page-content .tab-title > ul{ width: 100%;}

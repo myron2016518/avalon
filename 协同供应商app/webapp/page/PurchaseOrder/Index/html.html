@@ -1,0 +1,30 @@
+
+<div class="page-content" ms-controller="PurchaseOrder/Index">
+	
+
+	<div class="tab-title">
+		<ul>
+			<li ms-repeat="filter" ms-click="runFilter(el.id)"><a href="javascript:void(0);" ms-class="now: el.id == filterSelected">{{el.label}}</a></li>
+		</ul>
+	</div>
+	<div class="tab-body">
+	  <table width="100%" border="1" cellspacing="0" class="altrowstable">
+		<thead>
+			<tr>
+			  <th style="width:20%;">采购日期</th>
+			  <th style="width:20%;">关闭状态</th>
+			  <th style="width:20%;">单据编号</th>
+			</tr>
+		</thead>
+		<tbody ms-repeat="purchaseOrders" ms-click="toggle()">		
+			<tr>
+			  <td style="width:20%;">{{el.purchaseDate}}</td>
+			  <td style="width:20%;">{{el.closeState}}</td>
+			  <td style="width:20%;" ms-click="detail(el)">{{el.number}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>	  
+
+</div>
+

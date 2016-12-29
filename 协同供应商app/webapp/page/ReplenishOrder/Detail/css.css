@@ -1,0 +1,6 @@
+#pageReplenishOrderadd .search .frame{position:absolute !important;top:0 !important;}
+#pageReplenishOrderadd .page-content{padding-top:47px;} 
+#pageReplenishOrderadd .page-content .tab-title > ul > li{text-align: center;width: 25%;padding:0px} 
+#pageReplenishOrderadd .page-content .tab-title > ul{ width: 100%;}
+#pageReplenishOrderadd .page-content .weui_tabbar div{    width: 33%;padding: 5px 10px;}
+#pageReplenishOrderadd .page-content .tab-title .form-group .firsta{      padding-left: 10%;}

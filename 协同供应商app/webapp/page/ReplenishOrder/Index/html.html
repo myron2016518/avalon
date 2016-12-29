@@ -1,0 +1,38 @@
+
+<div class="page-content" ms-controller="ReplenishOrder/Index">
+	
+
+	<div class="tab-title">
+		<ul>
+			<li ms-repeat="filter" ms-click="runFilter(el.id)"><a href="javascript:void(0);" ms-class="now: el.id == filterSelected">{{el.label}}</a></li>
+		</ul>
+	</div>
+	<div class="tab-body">
+	  <table width="100%" border="1" cellspacing="0" class="altrowstable">
+		<thead>
+			<tr>
+			  <th style="width:20%;">提交状态</th>
+			  <th style="width:20%;">交货状态</th>
+			  <th style="width:20%;">交货日期</th>
+			  <th style="width:20%;">单据编号</th>
+			</tr>
+		</thead>
+		<tbody ms-repeat="replenishOrders" ms-click="toggle()">		
+			<tr>
+			  <td style="width:20%;">{{submitState(el)}}</td>
+			  <td style="width:20%;">{{el.deliveryState}}</td>
+			  <td style="width:20%;">{{el.purchaseDate}}</td>
+			  <td style="width:20%;" ms-click="detail(el)">{{el.number}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>	
+	<div class="weui_tabbar bottom-menu" >
+	  <div class="dmc-btn"> <a href="javascript:void(0);"  class="dmc-btn-positive">删除</a></div>
+	  <div class="dmc-btn"> <a href="javascript:void(0);" ms-click="go_page('ReplenishOrder/add')" class="dmc-btn-positive">添加</a></div>
+	  <div class="dmc-btn"> <a href="javascript:void(0);"  class="dmc-btn-positive">提交</a></div>
+	  <div class="dmc-btn"> <a href="javascript:void(0);"  class="dmc-btn-positive">关闭</a></div>
+	</div>  
+
+</div>
+

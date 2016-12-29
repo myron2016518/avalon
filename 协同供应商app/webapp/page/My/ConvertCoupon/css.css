@@ -1,0 +1,6 @@
+#pageMyConvertCoupon #base{padding-bottom:0;}
+#pageMyConvertCoupon .centerbody{padding-top:0;}
+
+#pageMyConvertCoupon .search,
+#pageMyConvertCoupon .bottom-menu
+	{display:none;}

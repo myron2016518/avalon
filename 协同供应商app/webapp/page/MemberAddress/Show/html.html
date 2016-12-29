@@ -1,0 +1,75 @@
+<div class="page-content" ms-controller="MemberAddress/Show"  >	
+	
+	<div class="address">
+		<div class="address-title">
+			<a href="javascript:void(0);" style="top: 0.1rem;" ms-click="go_page('MemberAddress/Index')"><span class="icon-ico19"></span></a>
+			<h3 ms-if="obj.id == ''">添加收货地址</h3>
+			<h3 ms-if="obj.id != ''">编辑收货地址</h3>
+		</div>
+		<form>
+			<div class="form-div">
+				<p>收货人：</p>
+				<div class="form-input"><input class="txt-input" ms-duplex-text="obj.consignee"></div>
+			</div>
+			<div class="form-div">
+				<p>联系方式：</p>
+				<div class="form-input"><input class="txt-input" ms-duplex-text="obj.phone"></div>
+			</div>
+			<div class="form-div open-popup" data-target="#half-address" ms-click="addr_click()">
+				<p>所在地区：</p>
+				<div class="form-input"><div class="fill-address full-address"><span>{{obj.regionName}}&nbsp</span></div></div><!--当选择了地址的时候，这里应该用选择地址所得的结果替换span-->
+				<span class="icon-ico20 icon-arrow" ></span>
+			</div>			
+			<div class="form-div">
+				<p>详细地址：</p>
+				<div class="form-input">
+					<textarea rows="2" ms-duplex-text="obj.detailedAddress"></textarea>
+				</div>
+			</div>
+			<div class="remember-div">
+				<div  ms-click="defaultAddress" class="remember"><!--点击这个，才会出现这个span。不然是空的-->
+					<span  ms-class="icon-ico26: obj.isDefault == 1" style="position: absolute;"></span>
+				</div>
+				<div class="remember-text">设为默认地址</div>
+			</div>
+			<div class="form-div" style="padding: 0; border: none;">
+				<a href="javascript:void(0);"  ms-click="goModifyOrCreate()" class="btn-save btn-default">保存并使用</a>
+				<!--上述input填完之后按钮会变成正常状态，这时去掉btn-disabled即可-->
+			</div>
+		</form>
+	</div>
+		
+	<!--地址选择--具体效果请参照详情页地址选择-->
+	<div id="half-address" class="pro-detail-win weui-popup-container popup-bottom">
+	    <div class="weui-popup-overlay"></div>
+	    <div class="weui-popup-modal">
+	    	<div class="toolbar">
+	        	<div class="toolbar-inner">
+		            <a href="javascript:;" class="picker-button icon-close2 icon-ico18 close-popup addrClose"></a>
+		            <h1 class="title">收货地址</h1>
+	        	</div>
+	        </div>
+	        <div class="win-address">
+	        	<!--选择地址--start-->
+	        	<div class="select-title">
+	    			<ul class="selectAddr">
+	    				<li id="province" ms-class="active:select_class=='province'" ms-click="addr_kind_change(0)">{{select_addr_name.province}}</li>
+                        <li id="city" ms-class="active:select_class=='city'" style="display: none;" ms-click="addr_kind_change('city')">{{select_addr_name.city}}</li>
+                        <li id="country" ms-class="active:select_class=='country'" style="display: none;" ms-click="addr_kind_change('country')">{{select_addr_name.country}}</li>
+                        <li id="town" ms-class="active:select_class=='town'" style="display: none;" ms-click="addr_kind_change('town')">{{select_addr_name.town}}</li>
+                        <li id="village" ms-class="active:select_class=='village'" style="display: none;" ms-click="addr_kind_change('village')">{{select_addr_name.village}}</li>
+                        <li id="street" ms-class="active:select_class=='street'" style="display: none;" ms-click="addr_kind_change('street')">{{select_addr_name.street}}</li>
+	    				<!--<li>请选择</li>--此行是在选择了上一级目录之后有的，--->
+	    			</ul>
+	    		</div>
+	    		<div class="address-list">
+	    			<ul ms-repeat="addr_list">
+                        <li ms-click="addr_change(el)" ms-class="active:kind_class==el.name">{{el.name}}</li>
+                    </ul>
+	    		</div>
+	        	<!--选择地址--end-->
+	        </div>
+	    </div>
+	</div>	
+	
+</div>

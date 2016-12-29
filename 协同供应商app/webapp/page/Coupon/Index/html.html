@@ -1,0 +1,35 @@
+<div class="page-content" ms-controller="Coupon/Index">
+	
+	<div class="coupon-banner"><img src="images/coupon-banner.jpg" align=""/></div>
+<div class="coupon-news"><span>{{obj[0].grantDate | date("yyyy.MM.dd")}} - {{obj[0].grantEndDate | date("yyyy.MM.dd")}}</span><a href="Coupon-list.html">先到先得哦！</a></div>
+<div class="coupon-list" ms-repeat="obj">
+  <dl>
+    <dt>
+      <h3><span>{{el.faceValue | number(0)}}</span>元</h3>
+      <p class="leftline"><img class="img" src="images/line.png" alt=""/></p>
+      <span class="coupon-txt">订单满{{el.consumptionLimit}}元使用</span></dt>
+    <dd>
+      <ul>
+        <li>
+          <h3>{{el.faceValue | number(0)}}元优惠券</h3>
+        </li>
+        <li>剩{{el.surplusNum}}张</li>
+        <li>每人限领{{el.receiveLimit}}张</li>
+        <li>{{el.effectiveStr}}</li>
+      </ul>
+    </dd>
+    <a href="javascript:void(0);" class="btn-dialog Button" ms-click="coupon_reveive(el)" ms-if="el.receiveState == 0">{{formaterStatus(el)}}</a> 
+    <a href="javascript:void(0);" class="btn-dialog Button Gray" ms-if="el.receiveState == 1">{{formaterStatus(el)}}</a>
+    <img class="topico" src="images/linetop.png" alt=""/> <img class="linebottom" src="images/linebottom.png" alt=""/>
+    <div style="clear:both;"></div>
+  </dl>
+</div>
+<div class="js"  style="display:none;">
+  <div class="jsbody">
+<a href="#" class="closeDialog"><img class="img" src="images/Close.png" alt=""/></a>你已经是大麦场老朋友噢，前往APP
+
+  </div>
+</div>
+	
+	
+</div>

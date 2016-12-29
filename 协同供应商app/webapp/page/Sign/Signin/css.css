@@ -1,0 +1,10 @@
+#pageSignSignin #base{padding-bottom:0;}
+#pageSignSignin .bottom-menu{display:none;}
+
+#pageSignSignin{background-color:rgba(255, 107, 19, 1);}
+#pageSignSignin .member .findPwd-text a {color: #fff;}
+#pageSignSignin .search{display:none !important;}
+#pageSignSignin .copyright{display:block;}
+
+#pageSignSignin .dmc-btn a.dmc-btn-dark {color:#777;background-color:#eaeaea;}
+#pageSignSignin .dmc-btn a.dmc-btn-positive {color:#777;background-color:#fff;}

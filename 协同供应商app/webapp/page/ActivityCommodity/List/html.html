@@ -1,0 +1,38 @@
+<div class="page-content" ms-controller="ActivityCommodity/List">
+<!--list-3 -->
+	<div class="centerbanner">
+	  <img ms-attr-src="img(activity_banner.picPath)" alt=""/>
+	  <ul ms-repeat="banner_list">
+	    <li><a href="javascript:void(0)" ms-click="banner_click(el)"><img ms-attr-src="img(el.picPath)" alt=""/></a></li>
+	  </ul>
+	</div>
+	<!-- 即将开始提示 -->
+	<div class="share-time" ms-if="activity_banner.activityStatus == '0'">{{statusFormater()}}<span>(即将开始)</span></div>
+	<!-- 距离结束剩余时间提示 -->
+	<div class="End-time" ms-if="activity_banner.activityStatus == '1' && activity_banner.showCountDown == '1'">
+		<dl><dt>距离结束还剩：</dt><dd><span id="time_activity" ></span>
+	</div>
+	<!-- 活动已结束提示 -->
+	<div class="share-time" ms-if="activity_banner.activityStatus == '2'">{{statusFormater()}} (已结束)</div>
+	
+	<div class="result-sort">
+	  <ul>
+	    <li class="now"><a href="javascript:void(0);" ms-click="tab_change(0)">按销量排序</a></li>
+	    <li><a href="javascript:void(0);" ms-click="tab_change(1)">价格从高到低</a><i class="bar"></i></li>
+	    <li><a href="javascript:void(0);" ms-click="tab_change(2)">价格从低到高</a><i class="bar"></i></li>
+	  </ul>
+	</div>
+	<div class="homelist2">
+	  <div class="hprolist2" ms-repeat="obj">
+	    <dl>
+	      <dt><a href="javascript:void(0);" ms-click="banner_click(el)">
+	      	<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.commodity.thumbnail) +')'" />
+	        <div class="name">{{el.activityTitle}}</div>
+	        </a></dt>
+	      <dd>￥{{el.minPrice | number(2)}}<span>￥{{el.commodity.retailPrice | number(2)}}</span></dd>
+	    </dl>
+	  </div>
+	</div>
+
+
+</div>

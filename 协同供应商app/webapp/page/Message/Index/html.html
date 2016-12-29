@@ -1,0 +1,67 @@
+<div class="page-content" ms-controller="Message/Index">
+	
+	
+	<div class="msg">
+		<div class="msg-list">
+			<!--消息列表-->
+			<ul class="msg-ul">
+				<li ms-repeat="obj">
+					<a href="javascript:void(0);"  ms-click="goInfo(el)" >
+						<div class="msg-icon" ms-if="el.type == 'ORDERNOTICE'">
+						  <span class="icon-ico50 icon-msg"></span>
+						  <div ms-if="el.unread != '0'">
+						      <div ms-if="el.unread > 9">
+                                <span class="tip-num">9+</span>
+                              </div>
+                              <div ms-if="el.unread <= 9">
+                                <span class="tip-num">{{el.unread}}</span>
+                              </div>                              
+                          </div>
+						</div>
+						<div class="msg-icon" ms-if="el.type == 'PREORDER'">
+						  <span class="icon-ico51 icon-msg"></span>
+						  <div ms-if="el.unread != '0'">
+                              <div ms-if="el.unread > 9">
+                                <span class="tip-num">9+</span>
+                              </div>
+                              <div ms-if="el.unread <= 9">
+                                <span class="tip-num">{{el.unread}}</span>
+                              </div>                              
+                          </div>
+						</div>
+						<div class="msg-icon" ms-if="el.type == 'SYSTEM'">
+						  <span class="icon-ico52 icon-msg"></span>
+						  <div ms-if="el.unread != '0'">
+                              <div ms-if="el.unread > 9">
+                                <span class="tip-num">9+</span>
+                              </div>
+                              <div ms-if="el.unread <= 9">
+                                <span class="tip-num">{{el.unread}}</span>
+                              </div>                              
+                          </div>
+						</div>
+						<div class="msg-icon" ms-if="el.type == 'PROMOTION'">
+						  <span class="icon-ico53 icon-msg"></span>
+						  <div ms-if="el.unread != '0'">
+                              <div ms-if="el.unread > 9">
+                                <span class="tip-num">9+</span>
+                              </div>
+                              <div ms-if="el.unread <= 9">
+                                <span class="tip-num">{{el.unread}}</span>
+                              </div>                              
+                          </div>
+						</div>
+						<div class="msg-text">
+							<h3>{{el.typeName}}</h3>
+							<span class="msg-date" ms-if = "el.remarks == 0">{{el.createDate | date("HH:mm")}}</span>
+							<span class="msg-date" ms-if = "el.remarks == 1">{{el.createDate | date("MM-dd")}}</span>
+							<p>{{el.content}}</p>
+						</div>
+						<span class="icon-ico20 arrow-right"></span>
+					</a>
+				</li>				
+			</ul>
+		</div>
+	</div>
+	
+</div>

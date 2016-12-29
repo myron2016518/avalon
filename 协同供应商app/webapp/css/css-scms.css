@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+body, html{height:100%;font-size:100%;}
+.page-sign, .page-sign body{font-size:120%;}
+input,textarea{font-family:"Arial","苹方","思源黑体","微软雅黑";color:#333;}
+body{font-family:"Arial","苹方","思源黑体","微软雅黑";line-height:22px; color:#333;background:#fff;}
+img{vertical-align:top; border:none; vertical-align:middle;}
+ul{list-style:none;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#ff5e00;}
+img{ width:100%;}
+
+
+.time-title{ border-bottom:1px solid #d9dbde; padding:55px 0 10px; font-size:0.8rem;}
+.time-title dl{position:relative;}
+.time-title dl dt a{ background:#f0f2f5; float:left; display:inline-block;border-radius:6px; padding:0 0.45rem; margin:0 0 0 0.4rem;height:32px;line-height:32px;box-sizing: border-box;}
+.time-title dl dt a.focus{background-color:#ff5e00;color:#fff;}
+.time-title dl dd{ color:#666; padding-left:0.45rem;display:inline;}
+.time-title dl dd input{display:inline-block;border-radius:6px; padding:0 0.55rem 0 0.3rem; border:0;background: #f0f2f5 url(../base/img/scms/ico.png) no-repeat right center;height:32px;line-height:32px;width:5.5em;font-size:0.8rem;}
+.time-title dl dd a span{ float:right; display:inline-block; width:8px;padding-left:0.2rem;}
+.tab-title{ border-bottom:1px solid #d9dbde; width:100%; overflow:auto;}
+.tab-title ul{ width:26.8rem;}
+.tab-title ul li{ float:left; font-size:1rem; padding:0 0.7rem;}
+.tab-title ul li a{ padding:0.8rem 0 0.7rem; display:block;}
+.tab-title ul li a.now{ border-bottom:2px solid #ff5e00; color:#ff5e00}
+.tab-body{ background:#f2f4f7; padding:10px 0 0 0;}
+table.altrowstable { border-collapse: collapse;font-size:0.9rem;}
+table.altrowstable th {   border-width: 1px; padding:0.4rem 0 0.3rem; border-style: solid; background:#fff8f3;   border-color: #e6e8eb; font-weight:normal; }
+table.altrowstable > tbody > tr > td {border-width: 1px;  border-style: solid;  border-color: #e6e8eb; text-align:center;padding:0.4rem 0 0.3rem; }
+table.altrowstable > tbody > tr:nth-child(even){background-color:#fff;}
+table.altrowstable > tbody > tr:nth-child(odd){background-color:#fffdfb;}
+table.altrowstable td.tab-info{ background:#f2f4f7; text-align:left; padding:6px 8px;}
+table.altrowstable td.tab-info ul{ padding:0 0 0 10px;}
+table.altrowstable td a{ padding:0 6px; color:#ff6b13;}
+
+table.inner{border-collapse: collapse;}
+table.inner td{vertical-align:top;color:#666;}
+table.inner td.td-left{white-space: nowrap;}
+table.inner td.td-commodity-name div{overflow:hidden;max-height:44px;}
+
+.tab-body table{table-layout:fixed;}
+.tab-body table.altrowstable>thead>tr,.tab-body table.altrowstable>tbody>tr{height:55px;word-wrap:break-word;text-overflow:ellipsis;}
+
+.search form{    margin-top: 8px;margin-left: 47px;    margin-right: 10px;}
+
+
+/*主页*/
+.home-body{ background:#f2f4f7;}
+.home-header{ background:#ff5e00; color:#FFF; font-size:1rem; padding:1rem 10px; overflow:hidden; }
+.home-header dt{ float:left; width:40%;}
+.home-header dd{ float:left; width:60%; text-align:right; line-height:2rem;}
+.home-total{ background:#FFF; margin:0 0 10px 0;}
+.home-total dl{ border-bottom:1px solid #d9dbde; padding:0.9rem 0 0.6rem; text-align:center; font-size:0.8rem; color:#666; overflow:hidden;}
+.home-total dl dt{ float:left; width:50%;}
+.home-total dl dd{ float:left; width:50%; border-left:1px solid #d9dbde; margin:0 0 0 -1px;}
+.home-total dl span{ color:#ff5e00; font-size:1.2rem;}
+.home-list{ background:#FFF; margin:0 0 10px 0; overflow:hidden;}
+.home-list li{ border-left:1px solid #e6e8eb; border-bottom:1px solid #e6e8eb; float:left; width:33.3333%; margin:0 0 0 -1px; padding:0.6rem 0; min-height:4.8rem; text-align:center; font-size:0.9rem;}
+.home-list li a{ color:#666;}
+.home-list li span{ display:block; padding:0 2rem 0.2rem;}
+.search .time-Choice ul li{padding:0px;line-height: 0px;font-size:1.2rem;}
+
+
+.Button{ background:#FFF; font-size:1.1rem; text-align:center; padding:1rem 0;box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.2);}
+
+/*订单详情*/
+.add-info{ background:#FFF url(../base/img/scms/line.png) left bottom no-repeat;background-size:100% 3px; padding:0.8rem 10px 0.8rem 35px; font-size:0.9rem;}
+.add-info dt{ font-weight:bold;}
+.add-info dt span.tel-txt{ float:right;}
+.add-info dd{ position:relative;}
+.add-info dd span.addico{ position:absolute; left:-25px; top:0; font-size:1.1rem;}
+#check_box{ padding:0 4px;}
+#check_box a{ padding:0; color:#FFF;}
+a.dmc_check_box { border: 1px solid #959595; border-radius: 100%; display: inline-block; height: 20px; width: 20px;}
+a.dmc_checked { background-color: #ff6b13; border: 1px solid #ff6b13; line-height: 20px; text-align: center; color:#FFF;}
+/*每日销售明细*/
+.time-Choice{ position:relative; border-bottom:1px solid #d9dbde; padding:0.5rem 0; font-size:0.8rem; text-align:center;}
+.time-Choice ul li{ display:inline-block; width:28%;}
+.time-Choice a{ border:1px solid #f0f2f5; background:#f0f2f5; display:block;border-radius:6px; padding:0.3rem 0; margin:0 6px;}
+.time-Choice a span{ float:right; padding:0.2rem 5px 0 0;}
+.time-Choice a.now{ background:#FFF; border:1px solid #ff5e00; color:#ff5e00;}
+.Choice-info{ background-color:rgba(0,0,0,0.5);position:absolute; left:0; right:0; top:3rem; bottom:0; overflow:hidden;}
+.Choice-info ul{border-top:1px solid #d9dbde; background:#FFF;  padding:15px 0 0 0; overflow:hidden;}
+.Choice-info li{ float:left; width:50%; text-align:center; padding:0 0 10px 0;}
+.Choice-info li a{ border:1px solid #fff;display:inline-block; padding:0.3rem 0.6rem;border-radius:6px;}
+.Choice-info li a.now{ background:#FFF; border:1px solid #ff5e00; color:#ff5e00;}

@@ -1,0 +1,5 @@
+#pageReplenishOrderIndex .search .frame{position:absolute !important;top:0 !important;}
+#pageReplenishOrderIndex .page-content{padding-top:47px;} 
+#pageReplenishOrderIndex .page-content .tab-title > ul > li{text-align: center;width: 25%;padding:0px} 
+#pageReplenishOrderIndex .page-content .tab-title > ul{ width: 100%;}
+#pageReplenishOrderIndex .page-content .weui_tabbar div{    width: 25%;padding: 5px 10px;}

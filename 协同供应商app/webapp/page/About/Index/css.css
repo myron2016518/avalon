@@ -1,0 +1,8 @@
+/* Page CSS */
+.about{ background:#FFF; min-height:100%;}
+.about-info{ padding:10px 15px; color:#221815; font-size:0.6rem;}
+.about-body{ padding:0 15px; color:#221815; font-size:0.6rem;}
+.about-body dl{ padding:0 0 10px 0;}
+.about-body dl dt{ border-left:2px solid #fd6b27; background:#fff3db; color:#ea5921; font-size:0.7rem; height:32px; line-height:32px; padding:0 0 0 6px; overflow:hidden;}
+.about-body dl dt span{ float:left; width:20px; padding:6px 6px 0 0;}
+.about-body dl dd{ padding:4px 0 0 0;}

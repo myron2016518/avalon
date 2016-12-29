@@ -1,0 +1,35 @@
+<div class="page-content" ms-controller="Commodity/Search">
+  <div class="weui_tab">
+  <div class="weui_navbar he-search">
+    <div class="frame frameScroll">
+      <form >
+        <input ms-focus="onFocus()" ms-blur="onBlur()" name="searchInput" type="text" 
+        	id="searchInput" ms-duplex-text="defaultTitle"  class="hd_search_txt">
+        <a class="hd_search_clear icon-ico27" href="javascript:;" ms-click="cleanKeyword()"></a>
+      </form>
+      <div class="hd_button"><a href="javascript:void(0)" class="hd_search_btn_blue" ms-click="onClick()">搜索</a></div>
+    </div>
+  </div>
+  <div class="weui_tab_bd searchbody" >
+    <div class="search_text">热门搜索</div>
+    <div class="search_panel_con">
+      <ul class="tags" ms-repeat="obj" >
+        <li class="keyword" ><a href="javascript:void(0)" ms-click="subSearch(el.keyWord)">{{el.keyWord}}</a></li>
+      </ul>
+    </div>
+   <!--  <div class="search_text">历史搜索</div>
+    <div class="search_panel_con">
+      <ul class="tags" >
+        <li class="keyword"><a href="list.html">女鞋</a></li>
+        <li class="keyword"><a href="list.html">时尚套装女</a></li>
+        <li class="keyword"><a href="list.html">毛呢大衣女</a></li>
+        <li class="keyword"><a href="list.html">华为手机</a></li>
+        <li class="keyword"><a href="list.html">手机</a></li>
+        <li class="keyword"><a href="list.html">男士外套</a></li>
+        <li class="keyword"><a href="list.html">男鞋</a></li>
+      </ul>
+    </div>
+    <div class="search_del"><a href="#"><span class="icon-ico29"></span>清空历史搜索</a></div> -->
+  </div>
+</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="page-content" ms-controller="Address/Index">
+	
+	
+	<!--内容区-start-->
+		<div class="address">
+			<dl class="address-list-dl">
+				<dt>
+					<h3>我的收货地址1<span>（默认地址）</span></h3>
+					<div class="operating">
+						<a href="javascript:void(0);" id="show-confirm"><span class="icon-ico30"></span>删除</a>
+						<a href="javascript:void(0);"  ms-click="ff.page.go('Show')" ><span class="icon-ico31"></span>修改</a>
+					</div>
+				</dt>
+				<dd>
+					<div class="receiver-info">
+						<p>二月红</p>
+						<p>13723232323</p>
+						<p>广东省深圳市南山区南山村中国大队第8888巷8888楼88888号</p>
+					</div>
+				</dd>
+			</dl>
+			<dl class="address-list-dl">
+				<dt>
+					<h3>我的收货地址1</h3>
+					<div class="operating">
+						<a href="javascript:void(0);"><span class="icon-ico30"></span>删除</a>
+						<a href="javascript:void(0);"  ms-click="go_page('My/AddressForm')"><span class="icon-ico31"></span>修改</a>
+					</div>
+				</dt>
+				<dd>
+					<div class="receiver-info">
+						<p>二月红</p>
+						<p>13723232323</p>
+						<p>广东省深圳市南山区南山村中国大队第8888巷8888楼88888号</p>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!--内容区-end-->
+		<div class="weui_tabbar address-bottom">
+			<a href="address-add.html" class="btn-default btn-add-address">添加新地址</a>
+		</div>
+		<script>
+		  $(function() {
+		    FastClick.attach(document.body);
+		  });
+			$(document).on("click", "#show-confirm", function() {
+				$.confirm("确定要删除该地址吗?", "", function() {
+				  $.toast("文件已经删除!");
+				}, function() {
+				  //取消操作
+				});
+			});
+  		</script>
+</div>

@@ -1,0 +1,68 @@
+<div class="page-content" ms-controller="Order/Index">
+	<!--<div class="weui_navbar result-sort">
+		<ul>
+		  <li class="now"><a href="#">按销量排序</a></li>
+		  <li><a href="#">价格从高到低</a><i class="bar"></i></li>
+		  <li><a href="#">价格从低到高</a><i class="bar"></i></li>
+		</ul>
+	</div>-->
+	<!--内容区-->
+	<div ms-repeat="obj">
+		<div class="orderbody">
+			<div class="order-title">
+				<a href="javascript:void(0);" ms-click="todetail(el)">{{formatter(el.status)}}</a>下单时间 {{el.createDate}}
+			</div>
+			<div ms-repeat-elem="el.detailList">
+				<div class="box-list">
+					<a href="javascript:void(0);"  ms-click="todetail(el)" class="detail-an">
+						<div class="box-img">
+							<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(elem.commodityImage) +')'"><!-- ms-attr-src="img(elem.commodityImage) images/img19.jpg-->
+						</div>
+						<div class="box-text">
+							<h1>{{elem.commodityTitle}}</h1>
+							<p class="box-size">{{elem.commodityAttributeValues}}</p>
+							<p class="box-price">￥<font color='#FF8000'>{{elem.actSalePrice | number(2)}}</font></p>
+							<p class="box-num">X{{elem.buyNum}}</p>
+						</div>
+					</a>
+					<div ms-if="elem.orderDetailStatus !='0'">
+						<p class="order-txt1">{{format(elem.orderDetailStatus)}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="order-txt">共{{el.buyCount}}件商品 合计
+				￥<font color='#FF8000'>{{el.actualPrice | number(2)}}</font>（含运费￥{{el.sendCost | number(2)}}）</div>
+			<div class="order-bottom">
+				<div ms-if="el.status ==0">
+					<a href="javascript:void(0);" ms-click="toPay(el)" class="now">去付款</a><a href="javascript:void(0);" ms-click="cancel(el)">取消订单</a>麦场配送
+				</div>
+				<div ms-if="el.status==1">
+					<a href="javascript:void(0);" ms-click="todetail(el)">查看订单</a>麦场配送
+				</div>
+				<div ms-if="el.status==2">
+					<a href="javascript:void(0);" ms-click="todetail(el)">查看订单</a>麦场配送
+				</div>
+				<div ms-if="el.status==3">
+					<a href="javascript:void(0);" ms-click="orderDelete(el)">删除订单</a>麦场配送
+				</div>
+				<div ms-if="el.status==4">
+					<a href="javascript:void(0);" ms-click="todetail(el)">查看订单</a>
+					<a href="javascript:void(0);" ms-click="logistics(el)" class="now">查看物流</a>麦场配送
+				</div>
+				<div ms-if="el.status==5">
+					<a href="javascript:void(0);" ms-click="orderDelete(el)">删除订单</a>麦场配送
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ms-if="obj.length==0">
+		<div style="position: absolute; left: 0; right: 0;top:50%; margin: -30px 0 0 0;text-align: center;height: 60px;"><h2>您还没有相关订单</h2><div class="No_more">可以去看看有哪些想买的</div></div>
+	</div>
+	<div ms-if="obj.length!=0">
+		<div class="No_more">没有更多啦~</div>
+	</div>
+	<!--内容区-->
+
+
+
+</div>

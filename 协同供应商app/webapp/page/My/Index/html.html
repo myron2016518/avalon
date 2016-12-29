@@ -1,0 +1,86 @@
+<div class="page-content" ms-controller="My/Index">
+<!--内容区-->
+    <div class="mms-head">
+      <div class="mms-head-bg"></div>
+      <div class="mms-news">
+        <a href="javascript:void(0);"  ms-click="go_page('Message/Index')" >
+            <span class="newsico">
+            	<div ms-if = "isShowRedPoint == true">
+            		<i id="msg_red_point"></i>
+            	</div>
+            </span>消息
+        </a>
+      </div>
+      <div class="mms-head-bottom">
+        <dl>
+          <dt><a href="javascript:void(0);" ms-click="photoClick()">
+          
+          <img src="images/a1.jpg" class="bg-cover-square" ms-css-background-image="'url(' + img(member.pictureUrl) +')'" />
+      
+          
+          <dd>
+            <p ms-if="member.nickName !=null">{{member.nickName}}</p><p ms-if="member.nickName ==null">{{member.phone}}</p>
+            <a href="javascript:void(0);"  ms-click="photoClick()">账户设置<span class="icon-ico20"></span></a></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="mms-order">
+      <ul>
+        <li><a href="javascript:void(0);"  ms-click="toOrderList(null,'全部订单')"><span class="titleico icon-ico32"></span>
+          <p>全部订单</p>
+          </a></li>
+        <li><a href="javascript:void(0);" ms-click="toOrderList(0,'待付款')"><span class="titleico icon-ico33"><div ms-if="statusNum.unpayCount !=0"><em>{{statusNum.unpayCount}}</em></div></span>
+          <p>待付款</p>
+          </a></li>
+        <li><a href="javascript:void(0);" ms-click="toOrderList(1,'待收货')"><span class="titleico icon-ico34"><div ms-if="statusNum.unreceiptCount !=0"><em>{{statusNum.unreceiptCount}}</em></div></span>
+          <p>待收货</p>
+          </a></li>
+        <li><a href="javascript:void(0);"  ms-click="ff.page.go({url:'AfterSaleApply/Refund',title:'退款/售后'})"><span class="titleico icon-ico35"><div ms-if="statusNum.refundCount !=0"><em>{{statusNum.refundCount}}</em></div></span>
+          <p>退款/售后</p>
+          </a></li>
+      </ul>
+    </div>
+    <div class="member-nav">
+      <!-- dl>
+        <dt class="icon-ico36" style="background:#fd755e"></dt>
+        <dd><a href="#"><span class="icon-ico20"></span>我的足迹</a></dd>
+      </dl> -->
+      <dl>
+        <dt class="icon-ico37" style="background:#a770c7"></dt>
+        <dd><a href="javascript:void(0);"  ms-click="go_page('My/MyBill')"><span class="icon-ico20"></span>我的账单</a></dd>
+      </dl>
+      <dl>
+        <dt class="icon-ico38" style="background:#fd7aac"></dt>
+        <dd><a href="javascript:void(0);"  ms-click="go_page('My/ConvertCoupon')"><span class="icon-ico20"></span>兑换优惠券</a></dd>
+      </dl>
+      <dl>
+        <dt class="icon-ico39" style="background:#ffa913"></dt>
+        <dd><a href="javascript:void(0);"  ms-click="couponList()" ><span class="icon-ico20"></span>我的优惠券</a></dd>
+      </dl>
+      <dl>
+        <dt class="icon-ico40" style="background:#a0db83"></dt>
+        <dd style="border:none;"><a href="javascript:void(0);"  ms-click="help()" ><span class="icon-ico20"></span>帮助与反馈</a></dd>
+      </dl>
+    </div>
+    <div class="selectedlist">
+      <div class="Recommend-title">
+        <h3>为您推荐</h3>
+      </div>
+      <div class="hprolist"  ms-repeat="recommendList">
+        <dl>
+          <dt><a href="javascript:void(0)" ms-click="clickRecommendCommodity(el)"><img ms-attr-src="img(el.imgPath)" alt=""/>
+            <div class="name" ms-click="clickRecommendCommodity(el)">{{el.title1}}</div>
+            </a></dt>
+          <dd>
+          	<a href="javascript:void(0)" data-target="#half" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='1'" class="icon-ico7 open-popup" ></a>
+			<a href="javascript:void(0)" data-target="#half-attr" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='0'" class="icon-ico7 open-popup" ></a>
+			<a href="javascript:void(0)" data-target="#half-attr" ms-if="!judgeEnough(el)" class="icon-ico7 icon-disabled" ></a>
+          	￥{{el.lowPrice}}
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <!-- 购物车模块 -->
+	<div ms-include-src="'page/Cart/Window/html.html'"></div>	
+    <!--内容区--> 
+</div>

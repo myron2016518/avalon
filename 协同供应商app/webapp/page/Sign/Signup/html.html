@@ -1,0 +1,44 @@
+<div class="page-content" ms-controller="Sign/Signup">	
+	
+	<div class="member">
+	<!--第二步 strat-->
+	<div class="membertxt" >已发送验证码到你的手机：{{phoneFormat(obj.phone)}}</div>
+	  
+	<form class="member-form">
+		<input name="textfield" type="hidden" class="Memberin" id="textfield" ms-duplex="obj.phone"  value="{{obj.phone}}">
+		
+	    <div class="member-table member-reg">
+	      <dl class="line">
+	        <dt>验证码</dt>
+	        <dd>
+	          <input name="textfield" type="text" class="Memberin" id="textfield2" ms-duplex-required="obj.code" ms-on-keyup="check_all" ms-duplex="obj.code" placeholder='请输入验证码' value="">
+	        </dd>
+	      </dl>
+	      <dl class="line">
+	        <dt>设置密码</dt>
+	        <dd>
+	          <input name="textfield" type="password" class="Memberin" id="textfield" ms-duplex="obj.password" maxlength="12" minlength="6" ms-duplex-maxlength-minlength-alpha_numeric="obj.password" ms-on-keyup="check_all" placeholder='6-12位数字、字母' value="">
+	        </dd>
+	      </dl>
+	      <dl class="line">
+	        <dt>确认密码</dt>
+	        <dd>
+	          <input name="textfield" type="password" class="Memberin" id="textfield" ms-duplex="obj.passwordr" maxlength="12" minlength="6" ms-duplex-required-repeat="obj.passwordr" data-duplex-repeat="signup_id" data-duplex-message="密码必须一致" ms-on-keyup="check_all" placeholder='确认新密码' value="">
+	        </dd>
+	      </dl>
+	      <dl>
+	        <dt>推荐人号码</dt>
+	        <dd>
+	          <input name="textfield" type="text" class="Memberin" id="textfield" ms-duplex="obj.remoccendPhone" placeholder='推荐人号码（非必填）' value="">
+	        </dd>
+	      </dl>
+	    </div>
+		
+	    <div class="member-regtxt">注册即视为同意<a href="#">《大麦场服务条款》</a></div>
+	    <div class="dmc-btn"> <a href="javascript:void(0);"  ms-click="register()" class="dmc-btn-positive">完 成</a></div>  
+
+		</form>
+	<!--第二步 end-->
+
+	</div>
+</div>

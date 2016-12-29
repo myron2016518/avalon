@@ -1,0 +1,15 @@
+<div class="page-content" ms-controller="My/Setting">
+	
+	<div class="setting">
+		<ul class="setting-ul">
+			<li><a href="javascript:void(0);" >头像：
+				<div class="tx-div" id="upload_image_div" ><img id="headerImg" ms-attr-src="img(member.pictureUrl)"></div>
+			</a></li>
+			<li><a href="javascript:void(0);" id="setting-nickname" ms-click="clickNickName(member.nickName)">昵称：{{member.nickName}}<span class="icon-ico20 icon-arrow"></span></a></li>
+			<li><a href="javascript:void(0);" id="setting-sex" ms-click="clickGender(member.simpleNickName)">性别：{{member.simpleNickName}}<span class="icon-ico20 icon-arrow"></span></a></li>
+			<li><a href="javascript:void(0);">绑定手机号码：{{getSimplePhone(member.phone)}}<span class="icon-ico20 icon-arrow"></span></a></li>
+			<li><a href="javascript:void(0);"  ms-click="go_page('Sign/FindpwPhone')" >修改登录密码<span class="icon-ico20 icon-arrow"></span></a></li>
+			<li><a href="javascript:void(0);"  ms-click="go_page('MemberAddress/Index')">收货地址管理<span class="icon-ico20 icon-arrow"></span></a></li>
+		</ul>
+	</div>
+</div>

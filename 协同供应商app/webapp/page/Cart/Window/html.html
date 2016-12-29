@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="page/Cart/Window/css.css">
+<script src="page/Cart/Window/js.js?20161116-3"></script>
+<!--加入购物车弹窗--有属性-->
+<div id="half" class="pro-detail-win weui-popup-container popup-bottom">
+	<div class="weui-popup-overlay"></div>
+	<div class="weui-popup-modal">
+		<a href="javascript:;" class="icon-close icon-ico1 close-popup"></a>
+		<div class="win-add-car">
+			<div class="pro-box">
+				<div class="img_box"><img ms-attr-src="img(cartObj.image)" alt=""></div>
+				<div class="win-pro-text">
+					<h1>{{cartObj.title}}</h1>
+					<p class="win-pro-price">￥{{cartObj.salePrice}}</p>
+				</div>
+			</div>
+			<div class="pro-attribute">
+				<div class="pro-color pro-block" ms-repeat="cartObj.attrList">
+					<h3>{{el.name}}</h3>
+					<ul>
+						<li ms-repeat="el.attrs" class="" style="" ms-click="clickAttr(el,this)">{{el}}</li><!--  class="active" -->
+					</ul>
+				</div>
+			</div><div style="clear: both;"></div>
+			<div class="win-total">
+				<div class="win-total-div">
+					<p>合计：<span>￥{{cartObj.total}}</span></p>
+					<div class="change_num">
+						<span class="icon-ico16 ico-minus" ms-click="reduceNum()"></span>
+						<input type="text" name="cartNum" id="cartNum" ms-duplex-text="cartObj.cartNum" ms-change="changeNum()">
+						<span class="icon-ico15 ico-plus" ms-click="addNum()"></span>
+					</div>
+				</div>
+				<div ms-click="confirmAddCart()" class="btn-cinfirm btn-default">确定</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+</div>
+
+<!--加入购物车弹窗--没有属性-->
+<div id="half-attr" class="pro-detail-win weui-popup-container popup-bottom">
+	<div class="weui-popup-overlay"></div>
+	<div class="weui-popup-modal">
+		<a href="javascript:;" class="icon-close icon-ico1 close-popup"></a>
+		<div class="win-add-car">
+			<div class="pro-box">
+				<div class="img_box"><img ms-attr-src="img(cartObj.image)" alt=""></div>
+				<div class="win-pro-text">
+					<h1>{{cartObj.title}}</h1>
+					<p class="win-pro-price">￥{{cartObj.salePrice}}</p>
+				</div>
+			</div><div style="clear: both;"></div>
+			<div class="win-total">
+				<div class="win-total-div">
+					<p>合计：<span>￥{{cartObj.total}}</span></p>
+					<div class="change_num">
+						<span class="icon-ico16 ico-minus" ms-click="reduceNum()"></span>
+						<input type="text" name="cartNum" id="cartNum" ms-duplex-text="cartObj.cartNum" ms-change="changeNum()">
+						<span class="icon-ico15 ico-plus" ms-click="addNum()"></span>
+					</div>
+				</div>
+				<div ms-click="confirmAddCart()" class="btn-cinfirm btn-default">确定</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+</div>

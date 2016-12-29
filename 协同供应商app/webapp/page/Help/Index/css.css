@@ -1,0 +1,45 @@
+*{margin:0px;padding:0px;}
+body{font-family:"Arial","Microsoft yahei","simsun"; line-height:22px; color:#000; font-size:0.9em;}
+img{border:none;}
+ul{list-style:none;}
+a{text-decoration:none; color:#000;}
+.clear{clear:both; height:0; overflow:hidden;}
+.fl{float:left;}
+.fr{float:right;}
+
+.titdiv1{height:45px; line-height:45px; background:#f9f9f9; border-bottom:1px solid #ccc; position:relative;}
+.titdiv1 h3{font-weight:normal; padding-left:40px; display:inline-block;}
+.titdiv1 img{position:absolute; left:10px; top:11px;}
+.titdiv1 a img{width:20px;}
+
+.tit1 h3{font-weight:normal; font-size:0.8em; background:url(../images/tit1.jpg) no-repeat left center; padding-left:10px; margin:10px;}
+.humanServices{margin:10px; height:60px;}
+.humanServices div{border:1px solid #ccc; border-radius:5px; width:49%; height:50px; overflow:hidden;background:#fff; cursor:pointer;}
+.humanServices div p{padding:5px 5px 5px 30px; text-align:center; width:100px; margin:0 auto;}
+.humanServices .serviceTel p{background:url(../images/icon_tel.png) no-repeat 0 center / 25px;}
+.humanServices .feedbackService p{background:url(../images/icon_feedback.png) no-repeat 5px center / 25px; line-height:40px; text-align:left; padding-left:40px;}
+.black_overlay{display:none;position: absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:1001;}
+.serviceTelDiv{display:none;position: absolute;top:30%;left:10%; padding:10px 0;width:80%;height:140px;z-index:1002;overflow: auto; background:#fff; border-radius:8px;}
+.serviceTelDiv h3{text-align:center; font-weight:normal; font-size:1.2em; margin:0 10px;}
+.serviceTelDiv p{text-align:center; margin:20px 0;}
+.btndiv{width:190px; margin:0 auto; height:40px;}
+.btndiv a{border:1px solid #333; border-radius:3px; padding:5px 30px;}
+.btndiv a.btnConfirm{background:#58b850; color:#fff; border:1px solid #58b850}
+
+.questionListDiv-ul li{border-bottom:1px solid #ccc; border-top:1px solid #ccc; margin-top:-1px; padding:10px 0; height:80px;}
+.q_left{width:90px; float:left; border-right:1px solid #ccc; text-align:center;}
+.q_left h3{font-weight:normal; font-size:1.1em;}.q_left p{font-size:0.8em;}
+.q_right{padding:0 10px 0 100px;}
+.q_right dd{float:left; width:49.5%; border-bottom:1px solid #ccc; line-height:40px;}
+.q_right dd.nobor{border:none;}
+
+.q_account li{border-bottom:1px solid #ccc; margin:0 10px; line-height:40px;}
+.q_account li a{display:block; background:url(../images/icon_go.png) no-repeat right center / 20px;}
+
+.feedback{margin:10px;}
+.feedback p{margin-bottom:10px;}
+.feedback textarea{display:block; font-size:1em; height:100px; width:100%;}
+.feedback a{display:block; font-size:1.1em; height:40px; width:100%;background:#0c9e00; color:#fff; border-radius:5px; text-align:center; line-height:40px;}
+
+.detailDiv{background:#f1f1f1; padding:10px; border-bottom:1px solid #ccc;}
+.detailDiv h3{font-weight:normal; margin-bottom:10px;}

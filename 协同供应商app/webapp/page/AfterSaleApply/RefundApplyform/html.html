@@ -1,0 +1,101 @@
+<div class="page-content" ms-controller="AfterSaleApply/RefundApplyform">
+	
+	<div class="Apply">
+  		<form name="form1" method="post" action="">
+	    <div class="Applybody">
+	      <div class="Apply-title">服务类型选择<span>*</span></div>
+	      <div class="Applyform check_box ffwx_check_box">
+	        <ul class="Applyli orderStatus">
+	         <!-- <li><a href="#" class="now"><span class="icon-ico26"></span></a>退款（没收到货）</li>
+	          <li><a href="#"></a>退货（已收到货）</li>
+	          <li><a href="#"></a>换货（已收到货）</li>-->
+	          <li>
+	          	退款（没收到货）
+	            <label style="float: right;margin-top: 11px">
+					<input type="radio" name="radiokbox"  class="dmc_check_box" ms-attr-value="1"  ms-click="check_item(1)" />
+					<i class="weui_icon_checked ffwx_icon_checked"></i>
+				</label>
+	          </li>
+	          
+	          <li>
+	          	退货（已收到货）
+	            <label style="float: right;margin-top: 11px">
+					<input type="radio" name="radiokbox" class="dmc_check_box" ms-attr-value="2"  ms-click="check_item(2)" />
+					<i class="weui_icon_checked ffwx_icon_checked"></i>
+				</label>
+	          </li>
+	          <li>
+	          	换货（已收到货）
+	            <label style="float: right;margin-top: 11px">
+					<input type="radio" name="radiokbox" class="dmc_check_box"  ms-attr-value="3" ms-click="check_item(3)" />
+					<i class="weui_icon_checked ffwx_icon_checked"></i>
+				</label>
+	          </li>
+	        </ul>
+	        
+	      </div>
+	    </div>
+	    
+    	<div class="Applybody" ms-if="obj.status!=1">
+      	  <div class="Apply-title">数量选择</div>
+      	  <div ms-repeat="obj.goods">
+	    	<div class="Applyform" ms-if="obj.skuId == el.skuId">
+		        <div class="pro-con">
+		          <div class="shop_info"> <a href="javascript:void(0);" class="img_box"><img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.imgPath) +')'" alt=""></a>
+		            <div class="info_box">
+		              <div class="pro-info"> <a class="p_name" href="javascript:void(0);">{{el.title}}</a>
+		                <p class="p_size">{{el.goodsAttr}}</p>
+		                <p class="p_price">￥{{el.discountPrice | number(2)}}</p>
+		              </div>
+		              <div class="change_num">									
+						 <input type="text" ms-duplex="count" ms-widget="spinner, $spinner, $spinnerOpt"/>
+					  </div>
+		            </div>
+		          </div>
+		        </div>
+		     </div>
+	      </div>
+        </div>
+	    <div class="Applybody">
+	      <div class="Apply-title">
+	      	
+	      	<a href="javascript:void(0)" ms-click="clickReason"  class="atitle-ico icon-ico22"></a>
+	      	<!--<a href="#" class="atitle-ico icon-ico21"></a>-->原因选择<span>*</span>
+	      	<span class="selectReasonRadio" style="float: right;color: #000000;padding-right: 10px;">{{explanationReason}}<span>
+	      </div>
+	      <div class="Applyform" style="display:none;">
+	        <ul class="Applyli">
+	          <li><a href="#" class="now"><span class="icon-ico26"></span></a>长时间没收到货</li>
+	          <li><a href="#"></a>信息填写错误，没收到货</li>
+	          <li><a href="#"></a>不想要了</li>
+	          <li><a href="#"></a>其他原因</li>
+	        </ul>
+	      </div>
+	    </div>
+	    <div class="Applybody">
+	      <div class="Apply-title">原因说明</div>
+	      <dl>
+	        <dt>
+	          <textarea name="textarea" ms-duplex="desc" id="textarea" cols="45" rows="5"  placeholder="请描述一下您的问题(200字以内)" data-placeholder="请描述一下您的问题(200字以内)"></textarea>
+	          <span>添加图片（可上传3张，5M内）</span></dt>
+	        <dd>
+	          <!--<ul>
+	            <li><img src="images/Head.jpg" alt=""/></li>
+	            <li><img src="images/Head.jpg" alt=""/></li>
+	            <li><a href="#"><img src="images/add.jpg" alt=""/></a></li>
+	          </ul>-->
+	          <div class="webuploader">
+			    <ul id="ff_WebUploader_imgList" class="uploader-list"></ul>
+			    <div id="ff_WebUploader_imgPicker">选择图片</div>
+				</div>
+	        </dd>
+	      </dl>
+	      
+	      	
+	    </div>
+	  </form>
+	  <div class="dmc-btn"><a href="javascript:void(0)" ms-click="clickASA"  class="dmc-btn-positive">提交申请</a></div>
+	</div>
+	
+	
+</div>

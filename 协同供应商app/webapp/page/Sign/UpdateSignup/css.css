@@ -1,0 +1,7 @@
+#pageSignUpdateSignup .bottom-menu{display:none;}
+#pageSignUpdateSignup #base{padding-bottom:0;}
+#pageSignUpdateSignup .page-content{box-sizing:border-box;float:left;height:100%;width: 100%;padding-bottom:55px;}
+#pageSignUpdateSignup .updateAndSigunup{padding-top: 20%;}
+#pageSignUpdateSignup .updateAndSigunup div{padding:33px}
+#pageSignUpdateSignup .updateAndSigunup div a{padding:33px;font-size: 1.2rem;}
+#pageSignUpdateSignup .hd_left img{padding: 0px 10px 0;}

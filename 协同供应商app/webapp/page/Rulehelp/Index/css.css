@@ -1,0 +1,5 @@
+/* Page CSS */
+/*兑换规则*/
+#pageRulehelpIndex .rule{ background:#fff; min-height:100%; color:#878686; font-size:0.7rem; padding:0 15px;}
+#pageRulehelpIndex .rule dl{ padding:14px 0 8px 0;}
+#pageRulehelpIndex .rule dt{ font-size:0.8rem; color:#323232; padding:0 0 2px 0;}

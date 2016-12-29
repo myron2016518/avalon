@@ -1,0 +1,91 @@
+<div class="page-content" ms-controller="Cart/Index">
+	
+	<div class="wrapper-scroll">
+	
+		<div class="car" ms-visible="null != obj && obj.length!= 0">
+			<div class="carList">
+				<a href="javascript:void(0);" class="btn-empty" ms-click="del_all()">清空</a>
+				<div class="car_con">
+									
+					<div ms-repeat="obj" class="product" data-repeat-rendered="cart_rendered">
+						<div class="pro-con" ms-repeat-elem="el.voList">
+							<div class="check_box ffwx_check_box" >
+								<label>
+									<input type="checkbox" name="checkbox" class="dmc_check_box" ms-attr-value="elem.id" ms-disabled='elem.status==0' ms-click="check_item(elem.id)" />
+									<i class="weui_icon_checked ffwx_icon_checked"></i>
+								</label>
+							</div>						
+							<div class="shop_info">
+								<a href="#" class="img_box">
+							    <img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(elem.commoditySkuPic) +')'" />
+ 
+								</a>
+								<div class="info_box">
+									<div class="pro-info">
+										<a class="p_name" href="javascript:void(0);" ms-text="elem.commodityTitle"  ms-click='showDetail(elem)'></a>
+										<p class="p_size">{{elem.skuAttrs}}</p>
+										<p class="p_price" ms-if = "elem.status != 0">￥{{elem.favourablePrice}}</p>
+										<p class="p_expired" ms-if = "elem.status == 0">失效</p>
+									</div>
+									<div class="delete_box">| <a href="javascript:void(0)" ms-click="del(elem.id)">删除</a></div>
+									<div class="change_num" ms-attr-data-option='{{elem.skuId}}'  >									
+										<input type="text" ms-duplex="elem.cartNum"  data-spinner-min='1' data-spinner-max='elem.storageNum' ms-widget="spinner, $spinner, $spinnerOpt"  ms-change="changeNum(elem)" ms-focus="changeBefore(elem)" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="start-wholesale" ms-visible="el.batchCount > 0">
+							<p>{{el.batchCount}}件起批</p>
+							<p>合计购买数量不满足最小批发量</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+		
+		<div class="carEmpty" ms-visible="null == obj || obj.length== 0">
+			<span class="icon-ico13 ico-car"></span>
+			<p>购物车还是空的</p>
+			<a href="javascript:void(0);" class="btn-default btn-orange" ms-click="ff.page.go('Home/Index')">去逛逛吧</a>
+		</div>
+	
+		  <!--以下是猜你喜欢产品列表-->
+		  <div class="selectedlist">
+		  	<div class="like-title"><h3>猜你喜欢</h3></div>
+		  	<div ms-repeat="recommentList">
+		    <div class="hprolist">
+		      <dl>
+		        <dt  ms-click='ff.service.goCommodity(el.goodsId)' ><a href="javascript:void(0);">
+		        <img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.imgPath) +')'" />
+		         
+ 		          <div class="name" >{{el.title1}}</div>
+		          </a></dt>
+		        <dd>
+                <a href="javascript:void(0)" data-target="#half" ms-click="openWindow(el,0)" ms-if="el.storageNum && el.storageNum>0 && el.existExtra=='1'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-click="openWindow(el,0)" ms-if="el.storageNum && el.storageNum>0 && el.existExtra=='0'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-if="!(el.storageNum && el.storageNum>0)" class="icon-ico7 icon-disabled" ></a>
+				￥{{el.lowPrice}}
+		        </dd>
+		      </dl>
+		    </div>
+		   </div>
+ 
+ 
+		  </div>
+	</div>
+
+	<div class="settlement">
+		<div class="check_box ffwx_check_box">
+			<label>
+				<input type="checkbox" name="checkbox" class="dmc_check_box check-all" ms-click="check_all()" />
+				<i class="weui_icon_checked ffwx_icon_checked"></i>
+				<span class="select-all">全选</span>
+			</label>
+		</div>
+		<div class="total-price">合计：<span>￥<span ms-text="to_fixed(ttl)"></span></span></div>
+		<div class="btn-settlement"><a href="javascript:void(0);" ms-click="create()">结算 ( {{total_num}} )</a></div>
+	</div>
+	 <div ms-include-src="'page/Cart/Window/html.html'"></div>	
+ </div>
+ 
