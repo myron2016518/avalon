@@ -1,0 +1,41 @@
+<div class="page-content" ms-controller="My/MyBill">
+	
+	<div class="bill">
+	<div class="bill-top">
+		<div class="month">
+			<p>{{obj.year}}年</p>
+			<p id="select-month"><span class="callbackVal">{{obj.month}}月</span><span class="icon-ico56"></span></p>
+		</div>
+		<div class="totalConsumption">
+			<p>历史总消费(元)<br/><span>{{obj.totalSum}}</span></p>
+		</div>
+	</div>
+	<div class="consumed">本月已消费：{{obj.totalMonth}}元</div>
+	<!--这个是没有消费记录的时候显示-->
+	<!--
+	<div class="bill-no">
+		<div class="ico-bill-no"><span class="icon-ico57"></span></div>
+		<p>当前月暂时没有消费记录哦</p>
+	</div>
+	-->
+	
+	<div class="billDetail">
+			<div class="billDetailCon" ms-repeat="obj.orderList">
+	        	<div class="circle" ms-class="active:$first"><span></span></div>
+	        	<p>订单：{{el.orderNumber}}<span>{{el.price}}</span></p>
+	            <p class="date">{{el.time}}</p>
+			</div>
+    </div>
+    
+</div>
+<script>
+  
+$(function() {
+    FastClick.attach(document.body);
+    
+  });
+
+</script>
+	
+	
+</div>

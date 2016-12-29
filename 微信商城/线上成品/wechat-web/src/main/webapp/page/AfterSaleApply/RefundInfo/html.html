@@ -1,0 +1,154 @@
+<div class="page-content" ms-controller="AfterSaleApply/RefundInfo">
+	
+	
+	<!-- 退款处理中 start-->
+		<div class="success"> 
+			  <!--内容区-start-->
+			  <div class="part-1">
+			    <h3><span class="icon-ico47"></span>{{formatter(obj.checkStatus)}}</h3>
+			    <p ms-if="obj.checkStatus != '3'">{{obj.checkStatusTitle}}</p>
+			    <p ms-if="obj.checkStatus == '3'">
+			    	<p>退款金额：{{obj.refundAmount | number(2)}}元</p>
+    				<p>退款时间：{{obj.refundDate}}</p>
+    			</p>
+			  </div>
+			  <div class="orderbody">
+			    <div class="order-title">详情</div>
+			    
+			    <div class="refund-txt pinfo">
+			      <ul>
+			        <li><span>{{obj.serviceTypeContent}}</span>服务类型</li>
+			        <li><span>{{obj.refundAmount | number(2)}}元</span>申请金额</li>
+			        <li><span>{{obj.reasonContent}}</span>退款原因</li>
+			        <li><span>{{obj.desc}}</span>退款说明</li>
+			        <li><span>{{obj.orderNumber}}</span>订单编号</li>
+			        <li><span>{{obj.applyDate}}</span>申请时间</li>
+			      </ul>
+			    </div>
+			  </div>
+			
+			  <div class="orderbody">
+			    <div class="order-title">退款商品信息</div>
+			    <div ms-repeat-elem="obj.goods">
+				    <div class="box-list"> <a href="javascript:void(0)" class="detail-an">
+				      <div class="box-img"> <img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(elem.imgPath) +')'"> </div>
+				      <div class="box-text">
+				        <h1>{{elem.title}}</h1>
+				        <p class="box-size">{{elem.goodsAttr}}</p>
+				        <p class="box-price"><span class="pro-Price">￥{{elem.discountPrice | number(2)}}</span></p>
+				        <p class="box-num">X{{elem.count}}</p>
+				      </div>
+				      </a>
+				    </div>
+			    </div>
+			    <div class="order-txt">共{{obj.totalNum}}件商品　实付款<span class="pro-Price">￥{{obj.refundAmount | number(2)}}</span></div>
+			  </div>
+			  <div ms-if="obj.serviceType=='2'">
+			  	<div ms-if="obj.newOrderNo!=null">
+			  	  <div class="View_details"><a href="javascript:void(0);" ms-click="detail(obj)">换货订单</a></div>
+			  	</div>
+			  </div>
+			  <!--内容区-end--> 
+		</div>
+	<!-- 退款处理中 end-->
+		
+	<!-- <div class="success"> 
+	  <div class="part-1">
+	    <h3><span class="icon-ico47"></span>退款申请中</h3>
+	    <p>您的申请正在处理中，请耐心等候……</p>
+	  </div>
+	  <div class="part-2">
+	    <dl class="now">
+	      <dt><span class="icon-ico41"></span></dt>
+	      <dd>【新郑市仓】拣货中</dd>
+	      <a href="#" class="add-an icon-ico20"></a>
+	      <dd class="add-time">2016-03-04 21:36:57</dd>
+	    </dl>
+	    <dl>
+	      <dt><span class="icon-ico42"></span></dt>
+	      <dd>收货人：二月红</dd>
+	      <dd class="address-tel">13723232323</dd>
+	      <dd class="address-dd"><span>收货地址：</span>
+	        <p>河南省许昌市禹州市方山镇坡村爱情人大队坡村</p>
+	      </dd>
+	    </dl>
+	    <dl style="border:none;">
+	      <div class="refund-txt">
+	        <ul>
+	          <li><span>201509102014200</span>订单号</li>
+	          <li><span>2015-09-10  21:52:23</span>确认订单时间</li>
+	          <li><span>2015-09-10  21:59:23</span>完成付款时间</li>
+	          <li><span>送货上门</span>配送方式</li>
+	          <li><span>无</span>发票信息</li>
+	        </ul>
+	      </div>
+	    </dl>
+	  </div>
+	  <div class="orderbody">
+	    <div class="order-title">商品信息</div>
+	    <div class="box-list"> <a href="detail.html" class="detail-an">
+	      <div class="box-img"> <img src="images/img19.jpg"> </div>
+	      <div class="box-text">
+	        <h1>FIVERAMS 五花温和雪肌面膜温和雪肌面膜面膜温和雪23mL/片</h1>
+	        <p class="box-size">S,红色</p>
+	        <p class="box-price">￥50.00</p>
+	        <p class="box-num">X1</p>
+	      </div>
+	      </a>
+	      <p class="order-txt1">退款处理中</p>
+	    </div>
+	    <div class="refund-txt pinfo">
+	      <ul>
+	        <li><span>￥2584.00</span>商品金额</li>
+	        <li><span>-￥5.00</span>优惠</li>
+	        <li><span>+￥10.00</span>运费</li>
+	      </ul>
+	    </div>
+	    <div class="order-txt">共1件商品　实付款<span class="pro-Price">￥2851.00</span></div>
+	  </div>
+	  <div class="View_details"><a href="javascript:void(0);"  ms-click="go_page('My/Logistics')">查看物流</a></div>
+	  
+	</div>
+
+
+
+
+
+
+		<div class="success"> 
+	  <div class="part-1">
+	    <h3><span class="icon-ico45"></span>换货成功</h3>
+	    <p>感谢您对大麦场的支持，欢迎您再次光临！</p>
+	  </div>
+	  <div class="orderbody">
+	    <div class="order-title">详情</div>
+	    
+	    <div class="refund-txt pinfo">
+	      <ul>
+	        <li><span>退货（已收到货）</span>服务类型</li>
+	        <li><span>5.00元</span>申请金额</li>
+	        <li><span>商品质量问题</span>退款原因</li>
+	        <li><span>拍错了</span>退款说明</li>
+	        <li><span>20151026088897</span>订单编号</li>
+	        <li><span>2015-10-24  10:11</span>申请时间</li>
+	      </ul>
+	    </div>
+	  </div>
+	
+	  <div class="orderbody">
+	    <div class="order-title">换货商品信息</div>
+	    <div class="box-list"> <a href="detail.html" class="detail-an">
+	      <div class="box-img"> <img src="images/img19.jpg"> </div>
+	      <div class="box-text">
+	        <h1>FIVERAMS 五花温和雪肌面膜温和雪肌面膜面膜温和雪23mL/片</h1>
+	        <p class="box-size">S,红色</p>
+	        <p class="box-price">￥50.00</p>
+	        <p class="box-num">X1</p>
+	      </div>
+	      </a>
+	    </div>
+	    
+	  </div>
+	    <div class="View_details"><a href="#">查看订单</a></div>
+	</div> -->
+</div>

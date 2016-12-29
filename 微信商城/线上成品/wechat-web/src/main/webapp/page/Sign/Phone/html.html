@@ -1,0 +1,23 @@
+<div class="page-content" ms-controller="Sign/Phone">
+	
+	<!--第一步 strat-->
+	<div class="member">
+	  <div class="member-form">
+	  <form ms-widget="validation">
+	    <div class="member-table">
+	      <dl>
+	        <dd>
+	          <input name="textfield" type="text" class="Memberin"  ms-duplex-phone-minlength="obj.phone"  ms-on-keyup="check_phone" data-duplex-minlength="11" maxlength="11" ms-duplex="obj.phone" placeholder='请输入中国大陆手机号码' id="textfield" value="">
+	        </dd>
+	      </dl>
+	    </div>
+	   </form>
+	    <div class="dmc-btn"><!-- <a href="reg2.html" class="dmc-btn-dark">下一步</a> --> <a href="javascript:void(0);" ms-click="getCode()" class="dmc-btn-positive">下一步</a></div>
+	  </div>
+	  <div class="red-txt">已有账号？<a href="javascript:void(0);"  ms-click="go_page('Sign/Signin')">登录</a></div>
+
+	<!--第一步 end-->
+	
+	
+	</div>
+</div>

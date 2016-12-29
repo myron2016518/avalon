@@ -1,0 +1,14 @@
+/* Page CSS */
+#pageErrorIndex .search, 
+#pageErrorIndex .bottom-menu
+	{display: none !important;}
+	
+#pageErrorIndex .failed{margin-top:30%;}
+
+.failed{width: 55%; margin: 0 auto; position: relative; top: 25%; text-align: center;}
+.failed img{width: 80%;}
+.failed p{font-size: 0.76rem; line-height: 2.5rem;}
+.failed .btn-reload{width: 60%; margin: 0 auto;font-size: 0.76rem; line-height: 2rem;}
+
+.btn-default3{color: #848483; display: block; border: 1px solid #848483; border-radius: 4px; line-height: 2.2rem; font-size: 0.86rem; text-align: center;}
+.btn-default3:hover{color: #ff6b13; border-color: #ff6b13;}

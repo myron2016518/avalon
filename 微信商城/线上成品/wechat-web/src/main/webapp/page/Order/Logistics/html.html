@@ -1,0 +1,18 @@
+<div class="page-content" ms-controller="Order/Logistics">
+
+	<div class="head-logistics">
+	  <ul>
+	    <li><span>订单编号</span>{{obj[0].orderNo}}</li>
+	    <li><span>承运人　</span>非凡大麦场</li>
+	  </ul>
+	</div>
+	<div class="order_wuliu">
+	  <dl class="order_list">
+    	<dd ms-repeat="obj">
+      		<div class="order_line"><i></i>
+        	<p ms-html='formatDesc(el.desc)'></p>
+        	<small class="time">{{el.time}}</small></div>
+    	</dd>
+	  </dl>
+	</div>
+</div>

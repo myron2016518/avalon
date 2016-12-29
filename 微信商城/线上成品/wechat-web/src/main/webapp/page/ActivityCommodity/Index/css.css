@@ -1,0 +1,57 @@
+/* Home CSS */
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+.categoryList {
+	width: 13%;
+	text-align: center;
+	text-align: -webkit-center;
+	float: left;
+}
+
+.categoryInfo {
+	float: left;
+	width: 87%;
+}
+
+
+#pageActivityCommodityIndex .find_nav {
+    width: 100%;
+    height: 61px;
+    background-color: #f9f9f9;
+    position: relative;
+    top: 0;
+    z-index: 8;
+    border-bottom: 1px solid #ddd;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    background: #323232;
+}
+#pageActivityCommodityIndex .find_nav_left {
+    position: relative;
+    overflow: hidden;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+#pageActivityCommodityIndex .find_nav_list {
+    position: absolute;
+    left: 0;
+}
+#pageActivityCommodityIndex .find_nav_list ul {
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+}
+#pageActivityCommodityIndex .find_nav_list ul li {
+    display: inline-block;
+    padding: 0 10px;
+}
+#pageActivityCommodityIndex .find_nav_cur{
+    color: #ff6b13 !important;
+}
+#pageActivityCommodityIndex .bottom-menu{visibility: hidden;}
+#pageActivityCommodityIndex #base{ padding-bottom: 0px;} 

@@ -1,0 +1,161 @@
+<div class="page-content" ms-controller="Home/Index">
+
+    <!-- 首页banner -->
+	<div class="homebanner swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+	  <div class="swiper-wrapper">
+	    <div ms-repeat="homebannerList" class="swiper-slide">
+	    	<img ms-attr-src="img(el.imgPath)" alt="" ms-click="clickAdvert(el)">
+	    </div>
+	  </div>
+	  <div class="swiper-pagination"></div>
+	</div>
+	  
+	  <!-- 首页8个广告位图标 -->
+	  <div class="homeico" style="background: url('http://image.ffzxnet.com//ned');">
+		<ul>
+		  <li ms-repeat="homeicoList">
+		  	<a ms-if="$index<8" href="javascript:void(0)" ms-click="clickAdvert(el)"  >
+				<span>
+					<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.imgPath) +')'" />
+				</span>
+				<p>{{el.title | truncate(6, '')}}</p>
+		    </a>
+		  </li>
+		</ul>
+	  </div>
+	  
+	  <!-- 首页广播消息，麦场热点...
+	  <div class="homenews">
+	  	<a href="javascript:void(0)" ms-click="go_page('rush2buy')">
+	  		<span class="red-txt">{{homenewsList.title}}</span> {{homenewsList.content}}</a>
+	  </div>
+	   -->
+	  <div class="homeseckill" >
+	  	<!-- 限时秒杀图，更多抢购点击处 -->
+		<div class="homeseckilltitle">
+			<a href="javascript:void(0)" ms-click="clickPanicList()">更多抢购
+				<span class="icon-ico5"></span>
+			</a>
+			<span class="htitle">限时秒杀</span>
+		</div>
+		<!-- 首页抢购列表 -->
+		<div class="homeseckilllist swiper-containerSeckill">
+		  <ul class="swiper-wrapper"  style="overflow: auto;">
+			<li class="swiper-slide" ms-repeat="homeseckillList" style="width:100px;">
+				<a href="javascript:void(0)" ms-click="clickPanicInfo(el)">
+					<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.activityImgPath) +')'" />
+					<span>￥{{el.discountPrice}}</span>
+					<em class="tm-price">￥{{el.price}}</em>
+				</a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	  
+	  <!-- 抢购列表下的4个广告图(首页聚特惠) -->
+	  <div class="homebox">
+		<div ms-repeat="homeFavList" class="item small">
+			<a href="javascript:void(0)" ms-click="clickAdvert(el)"><img ms-attr-src="img(el.imgPath)" alt=""/></a> 
+		</div>
+	  </div>
+	  
+	  <!-- 广告banner1 -->
+	  <div class="ad-banner">
+	  	<a href="javascript:void(0)" ms-click="clickAdvert(bannerOne)" ><img ms-attr-src="img(bannerOne.imgPath)"  alt=""/></a>
+	  </div>
+	  
+	  <!-- 麦场精选图 -->
+	  <div class="mall_title">
+		<div class="hometitle"><span class="titleico1">{{homeSelected.name}}</span></div>
+		<em class="line purple"><!--线--></em>
+	  </div>
+	  
+	  <!-- 麦场精选 -->
+	  <div class="homebox">
+		<div class="item big"><a href="javascript:void(0)" ms-click="clickAdvert(homeSelected.itemOne)"  >
+			<img ms-attr-src="img(homeSelected.itemOne.imgPath)" alt=""/></a> 
+		</div>
+		<div class="item big">
+		  <div ms-repeat="homeSelected.itemRowTwo" class="small">
+		  	 <a href="javascript:void(0)" ms-click="clickAdvert(el)" ><img ms-attr-src="img(el.imgPath)"  alt=""/></a>
+		  </div>
+		</div>
+		<div style="clear:both;"></div>
+		<div ms-repeat="homeSelected.itemCellTwo" class="item small">
+			<a href="javascript:void(0)" ms-click="clickAdvert(el)"><img img ms-attr-src="img(el.imgPath)" alt=""/></a> 
+		</div>
+	  </div>
+	  
+	  <!-- 广告banner2 -->
+	  <div class="ad-banner">
+	  	<a href="javascript:void(0)" ms-click="clickAdvert(bannerTwo)" ><img ms-attr-src="img(bannerTwo.imgPath)"  alt=""/></a>
+	  </div>
+	  
+	  <!-- 热门市场图 -->
+	  <div class="mall_title">
+		<div class="hometitle"><span class="titleico2">{{homeHotMarket.name}}</span></div>
+		<em class="line"><!--线--></em>
+	  </div>
+	 
+	  <!-- 热门市场下8个广告 -->
+	  <div class="homebox">
+		<div ms-repeat="homeHotMarket.itemRowTwo" class="item big">
+			<a href="javascript:void(0)" ms-click="clickAdvert(el)" >
+				<img img ms-attr-src="img(el.imgPath)" alt=""/>
+			</a>
+		</div>
+		<div ms-repeat="homeHotMarket.itemCellThree" class="item vw3 center">
+			<a href="javascript:void(0)" ms-click="clickAdvert(el)" >
+				<img img ms-attr-src="img(el.imgPath)" alt="" />
+			</a> 
+		</div>
+	  </div>
+	  
+	   <!-- 广告banner3 -->
+	  <div class="ad-banner">
+	  	<a href="javascript:void(0)" ms-click="clickAdvert(bannerThree)" ><img ms-attr-src="img(bannerThree.imgPath)" alt=""/></a>
+	  </div>
+	  
+	  <!--<div class="selectedtitle swiper-containerTab"  >
+		<ul  class="swiper-wrapper" style="    overflow: auto;" >
+		  <li class="swiper-slide" ms-repeat="homeTabList" ><a href="javascript:void(0)" ms-click="tab_click(el.id)" ms-class-1="now: homeTabDefaultId==el.id"" >{{el.name}}</a></li>
+		</ul>
+	  </div>-->
+	  
+	  <!-- 同类推荐类目区 -->
+      <div class="find_nav">
+	    <div class="find_nav_left">
+	        <div class="find_nav_list">
+	            <ul>
+	                <li ms-repeat="homeTabList" ><a href="javascript:void(0)" ms-click="show_commoditys(el.id)" ms-class-1="find_nav_cur: homeTabDefaultId==el.id">{{el.name}}</a></li>
+	            </ul>
+	        </div>
+	    </div>
+	  </div>
+	  
+	  <!-- 同类商品 -->
+	  <div class="selectedlist">
+		<div class="hprolist" ms-repeat="homeTabListItem" >
+		  <dl>
+			<dt><a href="javascript:void(0)" ms-click="ff.service.goCommodity(el.goodsId)" >
+				<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.imgPath) +')'" />
+			  <div class="name"  ms-click="ff.service.goCommodity(el.goodsId)">{{el.title1}}</div>
+			  </a>
+			</dt>
+			<dd>
+				<a href="javascript:void(0)" data-target="#half" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='1'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='0'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-if="!judgeEnough(el)" class="icon-ico7 icon-disabled" ></a>
+				￥{{el.lowPrice}}
+			</dd>
+		  </dl>
+		</div>
+	  </div>
+	  
+	  <!-- 购物车模块 -->
+	<div ms-include-src="'page/Cart/Window/html.html'" data-include-replace="true"></div>	
+	  
+	  <div class="No_more" id="NoMore" style="display:none;">没有更多啦~</div>
+	  
+	  
+</div>	

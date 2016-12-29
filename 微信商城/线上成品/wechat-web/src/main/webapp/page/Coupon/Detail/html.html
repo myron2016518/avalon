@@ -1,0 +1,52 @@
+<div class="page-content" ms-controller="Coupon/Detail">
+
+	<div class="couponinfo" ms-if="obj.status =='NOTUSE'"><img class="img" src="images/orangebg.png" alt=""/>
+	  <div class="infoleft">
+	    <dl>
+	      <dt>￥<span>{{obj.amount}}</span></dt>
+	      <dd>{{obj.useDateStr}}</dd>
+	    </dl>
+	  </div>
+	  <div class="infocenter"><span>{{obj.title}}</span>
+	    <dd>{{obj.useCondition}}</dd>
+	    </dl>
+	  </div>
+	  <div class="Line1"></div>
+	</div>
+	
+	<div class="couponinfo infopage" ms-if="obj.status =='YETTIMEOUT'"><img class="img" src="images/ashbg.png" alt=""/>
+	  <div class="infoleft">
+	    <dl>
+	      <dt>￥<span>{{obj.amount}}</span></dt>
+	      <dd>{{obj.useDateStr}}</dd>
+	    </dl>
+	  </div>
+	  <div class="infocenter"><span>{{obj.title}}</span>
+	    <dd>{{obj.useCondition}}</dd>
+	    </dl>
+	  </div>
+	  <div class="Line1"></div>
+	  <div class="rightico"><img src="images/Expiredico2.png" class="img" alt=""/></div>
+	</div>
+	
+	<div class="couponinfo infopage" ms-if="obj.status =='YETUSE'"><img class="img" src="images/ashbg.png" alt=""/>
+	  <div class="infoleft">
+	    <dl>
+	      <dt>￥<span>{{obj.amount}}</span></dt>
+	      <dd>{{obj.useDateStr}}</dd>
+	    </dl>
+	  </div>
+	  <div class="infocenter"><span>{{obj.title}}</span>
+	    <dd>{{obj.useCondition}}</dd>
+	    </dl>
+	  </div>
+	  <div class="Line1"></div>
+	  <div class="rightico"><img src="images/Usedico2.png" class="img" alt=""/></div>
+	</div>
+
+	<div class="couponExplain">
+	  <h3 class="infotitle">使用说明：</h3>
+	  {{obj.goodsType}}
+	</div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="page-content" ms-controller="Dmc/Index">
+	  <div ms-repeat="banner_list">
+	  	<div class="DMC-banner" ms-repeat-elem="el.adverts" ms-if="el.index == 1">
+		   <a href="javascript:void(0);" ms-click="click_advert(elem)"><img ms-attr-src="img(elem.imgPath)" alt=""/></a>
+		</div>
+		<div class="MDC-AD" ms-if="el.index == 2">
+		   <ul ms-repeat-elem="el.adverts">
+			  <li><a href="javascript:void(0);" ms-click="click_advert(elem)"><img ms-attr-src="img(elem.imgPath)" alt=""/></a></li>
+		   </ul>
+		</div>
+	  </div>
+	  <div class="DMC-list">
+		<div class="DMC-title">精<span>/</span>选<span>/</span>特<span>/</span>卖.每<span>/</span>天<span>/</span>更<span>/</span>新</div>
+		<div ms-repeat="obj">
+			<dl>
+			  <dt><a href="javascript:void(0);" ms-click="tab_change(el)"><img ms-attr-src="img(el.picPath)" alt=""/></a></dt>
+			  <dd><span><em class="icon-ico4"></em>{{formatter(el.actStatus,el.startDate,el.endDate)}}</span>
+			  <a href="#" ><div ms-html='el.title'></div> </a></dd>
+			</dl>
+		</div>
+	</div>
+</div>

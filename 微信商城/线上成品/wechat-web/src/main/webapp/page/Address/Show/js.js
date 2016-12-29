@@ -1,0 +1,3 @@
+ff.page.init({
+	vm:{},
+});

@@ -1,0 +1,38 @@
+<div class="page-content" ms-controller="Sign/Findpw">
+	
+	<div class="member">
+	
+
+	
+	
+	<!--第二步 strat-->
+	  <div class="membertxt">已发送验证码到你的手机：{{phoneFormat(obj.phone)}}</div>
+	  <div class="member-form">
+	  <input name="textfield" type="hidden" class="Memberin" id="textfield" ms-duplex="obj.phone"  value="{{obj.phone}}">
+	    <div class="member-table member-info">
+	      <dl class="line">
+	        <dt>验证码</dt>
+	        <dd><span class="getimgcode" id="down">120秒后重新获取</span><a href="javascript:void(0);" id="repeat" ms-click="getCode()" class="login-password" style="display:none">重新获取</a>
+	          <input name="textfield" type="text" class="Memberin" id="textfield" ms-duplex="obj.code" placeholder='请输入验证码' value="">
+	        </dd>
+	      </dl>
+	      <dl class="line">
+	        <dt>设置密码</dt>
+	        <dd>
+	          <input name="textfield" type="password" class="Memberin" id="textfield" ms-duplex="obj.password" placeholder='6-12位数字、字母' value="">
+	        </dd>
+	      </dl>
+	      <dl>
+	        <dt>确认密码</dt>
+	        <dd>
+	          <input name="textfield" type="password" class="Memberin" id="textfield" ms-duplex="obj.passwordr"  placeholder='确认新密码' value="">
+	        </dd>
+	      </dl>
+	    </div>
+	    <div class="dmc-btn"><!-- <a href="javascript:void(0);"  ms-click="go_page('Sign/Signin')" class="dmc-btn-dark">完 成</a> --> <a href="javascript:void(0);"  ms-click="findpw()" class="dmc-btn-positive">完 成</a></div>
+	  </div>
+
+
+		<!--第二步 end-->	
+	</div>
+</div>

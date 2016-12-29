@@ -1,0 +1,223 @@
+<div class="page-content" ms-controller="ActivityCommodity/Detail">
+
+	<div class="wrapper-scroll" ms-if="(obj!=null) && (obj.activityGoods!=null)">
+		<div class="detai">
+			<div class="pic-show">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" ms-repeat-elbanimg="obj.goodsBanner" >
+							<!-- <img ms-attr-src="img(elbanimg)" width="100%"  >
+							--><img ms-attr-src="elbanimg"  width="100%"  />
+						</div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<div class="goods-info whiteBg">
+				<h1>{{obj.activityGoods.activityTitle}}<br>{{obj.activityGoods.title2}}</h1>
+			 
+				<div class="price-info">
+					<dl>
+						<dt class="dl-list-1">￥{{obj.activityGoods.discountPrice | number(2)}}</dt>
+						<!--dl-list-2是正常普通详情页状态-->
+						<!--<dd class="dl-list-2">剩余<span>15</span>件</dd>-->
+						<!--dl-list-3是抢购详情提醒-->
+						<dd class="dl-list-3">仅限{{obj.activityGoods.limit}}件</dd>
+						<dd class="dl-list-4"><p>厂商建议价：<del>￥{{obj.activityGoods.price}}</del></p>
+						  <div ms-if='obj.activityGoods.idLimit!=obj.activityGoods.limit && obj.activityGoods.idLimit !=0' >
+						   <p >每人限购{{obj.activityGoods.idLimit}}件</p>
+						  </div>
+						 
+						 </dd>
+						<dd class="dl-list-5">已售{{obj.activityGoods.buycount}}件</dd>
+					</dl>
+				</div>
+				<!--panic-buying-ed是提醒属于抢购详情--抢购结束-->
+				
+				<div class="detail-active"  ms-if="obj.activityGoods.isPanicbuy=='2'">
+					<p>谢谢您的关注！</p>
+					<p>已结束</p>
+				</div>
+				
+				<!--panic-buying是提醒属于抢购详情--抢购中-->
+				<div class="panic-buying"   ms-if="obj.activityGoods.isPanicbuy=='1'">
+				<span  ms-if="obj.activityGoods.surplusNum!='0'"><!-- 未抢完，抢购中 -->
+					<span id="panic-buying"></span>
+					<img src="images/ico-tips1.jpg">
+				</span>
+				<span  ms-if="obj.activityGoods.surplusNum=='0'" ><!-- 已经抢完 -->
+				<p><font color="red">{{obj.activityGoods.limit}}件已抢光了，感谢关注!</font></p>
+					<img src="images/ico-tips2.jpg">
+				</span>
+				</div>
+				<!--panic-buying是提醒属于抢购详情--开抢-->
+				<div class="panic-buying-start"  ms-if="obj.activityGoods.isPanicbuy=='0'">
+					<p>{{obj.activityGoods.activityTime}}开售</p> <img src="images/ico-tips3.jpg">
+					
+				</div>
+			</div>
+			<div class="open-popup address-info whiteBg" data-target="#half-address" ms-click="addr_click()">
+				<p>
+					<span>收货区域：</span>
+					<span class="address-text">
+						<span class="icon-ico23"></span>{{sub_str(address_name,19)}}
+					</span>
+					<span class="icon-ico20 arrow-right"></span>
+				</p>
+			</div>
+			<div class="service-info whiteBg" ms-click="go_page('About/Index')">
+				<ul class="protxt">
+				    <li>运费：手机下单免运费</li><li></li>
+				    <li>服务：由大麦场发货并提供服务</li>
+			    </ul>
+			    <div class="pageinfoico">
+				    <dl>
+				      <dt>正</dt>
+				      <dd>100%正品保证</dd>
+				    </dl>
+				    <dl>
+				      <dt>实</dt>
+				      <dd>实体店体验</dd>
+				    </dl>
+				    <dl>
+				      <dt>惠</dt>
+				      <dd>价格实惠</dd>
+				    </dl>
+				    <dl>
+				      <dt>送</dt>
+				      <dd>村镇送货上门</dd>
+				    </dl>
+				    <dl>
+				      <dt>金</dt>
+				      <dd>金牌客服</dd>
+				    </dl>
+				    <dl>
+				      <dt>售</dt>
+				      <dd>售后无忧</dd>
+				    </dl>
+				</div>	
+				<span class="icon-ico20 arrow-right"></span>
+			</div>
+			<div class="whiteBg detail-info ">
+				<div class="detail-title">
+					<ul>
+						<li ms-class-1="active: select_tab==0" ><a href="javascript:void(0)"  ms-click="tab_change(obj,'0')">图文详情</a></li>
+						<li ms-class-1="active: select_tab==1"  ><a href="javascript:void(0)"  ms-click="tab_change(obj,'1')">规则参数</a></li>
+					</ul>
+				</div>
+				<div class="pic-text-info" style="display: none;">
+					<img src="images/img22.jpg">
+					<br/><br/>
+					<img src="images/img23.jpg">
+				</div>
+				<div class="rule-parameters-info" >
+					<ul  ms-if="select_tab==1">
+						<li ms-repeat-elkz1="obj.paramsguding">{{elkz1}}</li>
+						<li ms-repeat-elkz2="obj.params">{{elkz2}}</li>
+					</ul>
+					<div ms-if="select_tab==0" ms-html="obj.activityGoods.imageTxt">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- 已结束 -->
+	<div class="weui_tabbar detail-footer" ms-if="obj.activityGoods.isPanicbuy=='2'">
+		<ul>
+			<!-- active已收藏加此样式 -->
+			<li style="display:none;"><a href="javascript:void(0);"><span class="icon-ico17 icon-star "></span><p>收藏</p></a></li>
+			<li><a href="javascript:void(0);"  ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico11 icon-car"><em>{{cart_count}}</em></span><p>购物车</p></a></li>
+			<li class="footer-btn-list"><a href="javascript:;" class="btn-disabled btn-default2 open-popup">加入购物车</a></li>
+			<li class="footer-btn-list"><a href="javascript:void(0);" class="btn-disabled btn-default">立即购买</a></li>
+			<!--btn-now-buy和btn-add-car是正常状态，btn-disabled是禁用状态-->
+		</ul>		
+	</div>
+	
+	<!--panic-buying是提醒属于抢购详情--抢购中-->
+	<div ms-if="obj.activityGoods.isPanicbuy=='1'">
+		<div class="weui_tabbar detail-footer" ms-if="obj.activityGoods.surplusNum!='0' && obj.activityGoods.storageNum!=0">
+			<ul>
+				<!-- active已收藏加此样式 -->
+				<li style="display:none;"><a href="#"><span class="icon-ico17 icon-star "></span><p>收藏</p></a></li>
+				<li><a href="javascript:void(0);"  ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico11 icon-car"><em>{{cart_count}}</em></span><p>购物车</p></a></li>
+				<li  class="footer-btn-list"><a href="javascript:void(0);" class="btn-add-car btn-default2 open-popup" ms-if="obj.activityGoods.existExtra=='0'" ms-click="openWindow(obj,3)" data-target="#half-attr">加入购物车</a></li>
+				<li  class="footer-btn-list"><a href="javascript:void(0);" class="btn-add-car btn-default2 open-popup" ms-if="obj.activityGoods.existExtra=='1'" ms-click="openWindow(obj,3)" data-target="#half">加入购物车</a></li>
+				<li  class="footer-btn-list"><a href="javascript:void(0);" class="btn-now-buy btn-default open-popup"  ms-if="obj.activityGoods.existExtra=='0'" ms-click="openWindow(obj,3,'BUY')" data-target="#half-attr">立即购买</a></li>
+				<li  class="footer-btn-list"><a href="javascript:void(0);" class="btn-now-buy btn-default open-popup"  ms-if="obj.activityGoods.existExtra=='1'" ms-click="openWindow(obj,3,'BUY')" data-target="#half">立即购买</a></li>
+				<!--btn-now-buy和btn-add-car是正常状态，btn-disabled是禁用状态-->
+			</ul>
+		</div>
+		<!-- 已经抢完 -->
+		<div class="weui_tabbar detail-footer"  ms-if="obj.activityGoods.surplusNum=='0' || obj.activityGoods.storageNum==0">
+			<ul>
+			<!-- active已收藏加此样式 -->
+				<li style="display:none;"><a href="javascript:void(0);"><span class="icon-ico17 icon-star "></span><p>收藏</p></a></li>
+				<li  ><a href="javascript:void(0);" ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico11 icon-car"><em>{{cart_count}}</em></span><p>购物车</p></a></li>
+				<li class="footer-btn-list"><a href="javascript:;" class="btn-disabled btn-default2 open-popup" >加入购物车</a></li>
+				<li class="footer-btn-list"><a href="javascript:void(0);" class="btn-disabled btn-default">立即购买</a></li>
+				<!--btn-now-buy和btn-add-car是正常状态，btn-disabled是禁用状态-->
+			</ul>
+		</div>
+	</div>
+	
+	<!--panic-buying是提醒属于抢购详情--未开抢-->
+	<div class="weui_tabbar detail-footer" ms-if="obj.activityGoods.isPanicbuy=='0'">
+		<ul  ms-if="obj.activityGoods.isRemind=='0'">
+			<li style="display:none;"><a href="#"><span class="icon-ico17 icon-star "></span><p>收藏</p></a></li>
+			<li><a href="javascript:void(0);"  ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico11 icon-car " ><em>{{cart_count}}</em></span><p>购物车</p></a></li>
+			<li class="footer-btn-list"><a href="javascript:;" class="btn-disabled btn-default2 " data-target="#half">加入购物车</a></li>
+			<!--<li class="footer-btn-list"><a href="confirm-order.html" class="btn-now-buy btn-default">立即购买</a></li>-->
+			<!--btn-now-buy和btn-add-car是正常状态，btn-disabled是禁用状态-->
+			<li class="footer-btn-list"><a href="#" class="btn-setting-tips"  ms-click="is_remind(obj.activityGoods,'REMIND')">设置提醒</a></li>
+			<!--btn-setting-tips 是抢购未开始的时候的提醒，开始了之后会变成上边的立即购买的按钮-->
+		</ul>
+	</div>
+	
+	<div class="weui_tabbar detail-footer" ms-if="obj.activityGoods.isRemind=='1'">
+		<ul>
+			<li style="display:none;"><a href="javascript:void(0);" ><span class="icon-ico17 icon-star "></span><p>收藏</p></a></li>
+			<li><a href="javascript:void(0);"  ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico11 icon-car " ><em>{{cart_count}}</em></span><p>购物车</p></a></li>
+			<li class="footer-btn-list"><a href="javascript:;" class="btn-disabled btn-default2 " data-target="#half">加入购物车</a></li>
+			<!--<li class="footer-btn-list"><a href="confirm-order.html" class="btn-now-buy btn-default">立即购买</a></li>-->
+			<!--btn-now-buy和btn-add-car是正常状态，btn-disabled是禁用状态-->
+			<li class="footer-btn-list"><a href="javascript:void(0);" class="btn-setting-tips"  ms-click="is_remind(obj.activityGoods,'CANCEL')">取消提醒</a></li>
+			<!--btn-setting-tips 是抢购未开始的时候的提醒，开始了之后会变成上边的立即购买的按钮-->
+		</ul>
+	</div>		
+		
+	<div ms-include-src="'page/Cart/Window/html.html'" data-include-replace="true"></div>
+	
+	<!--地址选择-->
+	<div id="half-address" class="pro-detail-win weui-popup-container popup-bottom">
+		<div class="weui-popup-overlay"></div>
+		<div class="weui-popup-modal">
+			<div class="toolbar">
+				<div class="toolbar-inner">
+					<a href="javascript:;" class="picker-button icon-close2 icon-ico18 close-popup addrClose"></a>
+					<h1 class="title">配送至</h1>
+				</div>
+			</div>
+			<div class="win-address">
+				<!--选择其他地址--start-->
+				<div class="select-title">
+					<ul class="selectAddr">
+						<li id="province" ms-class="active:select_class=='province'" ms-click="addr_kind_change('province')">{{select_addr_name.province}}</li>
+						<li id="city" ms-class="active:select_class=='city'" style="display: none;" ms-click="addr_kind_change(select_kind)">{{select_addr_name.city}}</li>
+						<li id="country" ms-class="active:select_class=='country'" style="display: none;" ms-click="addr_kind_change(select_kind)">{{select_addr_name.country}}</li>
+						<!--<li>请选择</li>--此行是在选择了上一级目录之后有的，--->
+					</ul>
+				</div>
+				<div class="address-list">
+					<ul ms-repeat="addr_list">
+						<li ms-click="addr_change(el)" ms-class="active:kind_class==el.name">{{el.name}}</li>
+					</ul>
+				</div>
+				<!--选择其他地址--end-->
+			</div>
+		</div>
+	</div>
+	
+</div>

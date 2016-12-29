@@ -1,0 +1,49 @@
+<div class="page-content" ms-controller="Sign/Changepw">
+	
+	
+	<div class="member">
+		  <form class="member-form" ms-widget="validation">
+		  	
+		  	<!-- 第一步 strat-->
+			<div class="step1" ms-visible="step == 1">
+		    <div class="member-table member-info">
+		      <dl class="line">
+		        <dt>手机号</dt>
+		        <dd>
+		          <input name="phone" type="text" class="Memberin" placeholder="请输入中国大陆手机号码" ms-duplex-phone-minlength="form.phone" ms-keyup="check_all" data-duplex-minlength="11" maxlength="11">
+		        </dd>
+		      </dl>
+		      <dl>
+		        <dt>验证码</dt>
+		        <dd><span class="getimgcode" ms-click="get_code"><span ms-visible="second == 0">获取验证码</span><span ms-visible="second > 0">{{second}} 秒后重新获取</span></span><!--发送过验证码后，文本内容变为120秒后重新获取-->
+		          <input name="validate_code" type="text" class="Memberin" placeholder="请输入验证码" ms-duplex-required="form.validate_code" ms-on-keyup="check_all" data-duplex-message="请输入验证码">
+		        </dd>
+		      </dl>      
+		    </div>
+		    <div class="dmc-btn"><a ms-class-1="dmc-btn-dark" ms-class-2="dmc-btn-positive: next == true" ms-click="go(2)">下一步</a> </div>
+			</div>
+			<!-- 第一步 end-->
+		
+		<!-- 第二步 strat-->
+		<div class="step2" ms-visible="step == 2">
+		  <div class="member-table member-info">
+	      <dl class="line">
+	        <dt>设置密码</dt>
+	        <dd>
+	          <input name="pw" type="password" id="signup_id" class="Memberin" placeholder="6-12位数字、字母" maxlength="12" minlength="6" ms-duplex-maxlength-minlength-alpha_numeric="form.pw" ms-on-keyup="check_all">
+	        </dd>
+	      </dl>
+	      <dl>
+	        <dt>确认密码</dt>
+	        <dd>
+	          <input name="pw_confirm" type="password" class="Memberin" placeholder="确认新密码"maxlength="12" minlength="6" ms-duplex-required-repeat="form.pw_confirm" data-duplex-repeat="signup_id" data-duplex-message="密码必须一致" ms-on-keyup="check_all">
+	        </dd>
+	      </dl>      
+	    </div>
+	    <div class="dmc-btn"><a href="javascript:void(0);"  ms-click="send" ms-class-1="dmc-btn-dark" ms-class-2="dmc-btn-positive: valid == true">完 成</a></div>
+		</div>
+		<!-- 第二步 end-->
+		  
+		  </form>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+/*-- 全局调整 --*/
+.weui_tab_bd{margin-bottom:0;padding-bottom:0;overflow:hidden;}
+#base,.homebg, .centerbody, .content, .wrapper-scroll{height:100%;float:left;width:100%;overflow:auto;box-sizing: border-box;}
+#base{padding-bottom:55px;}
+.hide-bottom .bottom-menu{visibility:hidden;}
+.hide-bottom #base{padding-bottom:0;}
+.hide-bottom .detail-footer{display:block;}
+.ios .hide-bottom .homebg{bottom:-8px;}
+.weui_navbar{position:fixed;}
+.Memberin{color:#323232;}
+.bg-cover-square {width:100%;background-position:50% 50%;background-size:cover;background-image:url('../img/blank.png')}
+.settlement{z-index:50;}
+.hd_download .Close{height:100%;padding-left:10px;padding-right:10px;top:0;left:0;display:block;}
+.hd_download .Close span{display:block;position:relative;top:50%;bottom:0;left:0;margin:auto;margin-top:-0.6rem;}
+.detail-footer ul li.cart-disabled{height:55px;padding-top:0;background-color:#a5a4a4;}
+.detail-footer ul li.cart-disabled a{padding-top:8px;display:block;height:100%;box-sizing: border-box;color:#fff;}
+
+/*-- WeUI样式的单选复选框调整 --*/
+label > *{display:inherit;}
+
+/*-- 页面转场等待时转圈圈 --*/
+/* .loading{background:#fff url('../img/spin-bg-white.gif') no-repeat center center;} */
+.loading-hide, .loading .homebg,.loading .centerbody, .loading .header{visibility:hidden;}
+
+/*-- 无顶部搜索或有固顶条时的调整 --*/
+.no-search .centerbody{padding-top:0;}
+.has-topnav .centerbody{padding-top:auto;}
+
+/*-- 错误信息，纯文字弹出提示 --*/
+.weui_toast_text{height:auto;border-radius:5px;}
+.weui_toast_text .weui_toast_content{font-size:16px;}
+.weui_toast_text{height:auto;text-align:left;}
+
+/*-- 复选框 --*/
+.ffwx_check_box label{display:inherit}
+.ffwx_check_box .dmc_check_box{left: -9999em;position: absolute;}	
+	.ffwx_check_box .ffwx_icon_checked:before{content:'\EA01';color:#c9c9c9;font-size:23px;display:block}
+	.ffwx_check_box .dmc_check_box:checked + .ffwx_icon_checked:before{content:'\EA06';color:#ff6b13}
+
+.oni-spinner, 
+.oni-spinner .oni-textbox .oni-textbox-input-wrap,
+.oni-spinner .oni-textbox .oni-textbox-input-wrap .oni-textbox-input
+	{width:100% !important;}
+	
+.oni-spinner .oni-textbox{width:25%;text-align:center;border-color:#ff6b13  !important;}
+.oni-spinner .oni-btn {width:30%;padding:0  !important;border-color:#ff6b13  !important;color:#b0b0b0  !important;background-color:#fff  !important;line-height:24px;}
+.oni-spinner .oni-textbox:hover, .oni-spinner .oni-btn:hover{border-color:#ff6b13  !important;}

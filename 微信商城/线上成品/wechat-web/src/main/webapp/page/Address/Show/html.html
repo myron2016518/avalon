@@ -1,0 +1,83 @@
+<div class="page-content" ms-controller="Address/Show">
+	
+	
+	<!--内容区-start-->
+		<div class="address" style="background-color: #ffffff;">
+			<div class="address-title">
+				<a href="#" style="top: 0.1rem;" ><span class="icon-ico19"></span></a>
+				<h3>新增收货地址</h3>
+			</div>
+			<form>
+			<div class="form-div">
+				<p>收货人：</p>
+				<div class="form-input"><input class="txt-input" placeholder="请输入收货人姓名 "></div>
+			</div>
+			<div class="form-div">
+				<p>联系方式：</p>
+				<div class="form-input"><input class="txt-input" placeholder="请输入收货人手机号 "></div>
+			</div>
+			<div class="form-div">
+				<p>所在地区：</p>
+				<div class="form-input"><div class="fill-address"><span>请点击选择收货地址</span></div></div><!--当选择了地址的时候，这里应该用选择地址所得的结果替换span-->
+				<a href="javascript:;" class="open-popup" data-target="#half-address"><span class="icon-ico20 icon-arrow"></span></a>
+			</div>
+			<div class="form-div">
+				<p>详细地址：</p>
+				<div class="form-input">
+					<textarea rows="2" placeholder="请输入详细地址"></textarea>
+				</div>
+			</div>
+			<div class="remember-div">
+				<div class="remember"><!--点击这个，才会出现这个span。不然是空的-->
+					<span class="icon-ico26"style="position: absolute;"></span>
+				</div>
+				<div class="remember-text">设为默认地址</div>
+			</div>
+			<div class="form-div" style="padding: 0; border: none;">
+				<a href="#" class="btn-save btn-default btn-disabled">保存并使用</a>
+				<!--上述input填完之后按钮会变成正常状态，这时去掉btn-disabled即可-->
+			</div>
+			</form>
+		</div>
+		<!--内容区-end-->
+		
+		
+		<!--地址选择--具体效果请参照详情页地址选择-->
+	<div id="half-address" class="pro-detail-win weui-popup-container popup-bottom">
+	    <div class="weui-popup-overlay"></div>
+	    <div class="weui-popup-modal">
+	    	<div class="toolbar">
+	        	<div class="toolbar-inner">
+		            <a href="javascript:;" class="picker-button icon-close2 icon-ico18 close-popup"></a>
+		            <h1 class="title">收货地址</h1>
+	        	</div>
+	        </div>
+	        <div class="win-address">
+	        	<!--选择地址--start-->
+	        	<div class="select-title">
+	    			<ul>
+	    				<li class="active">请选择</li>
+	    				<!--<li>请选择</li>--此行是在选择了上一级目录之后有的，--->
+	    			</ul>
+	    		</div>
+	    		<div class="address-list">
+	    			<ul>
+	    				<li>河南省</li>
+	    				<li>河北省</li>
+	    				<li>河南省</li>
+	    				<li>河北省</li>
+	    				<li>河南省</li>
+	    				<li>河北省</li>
+	    				<li>河南省</li>
+	    				<li>河北省</li>
+	    				<li>河南省</li>
+	    				<li>河北省111</li>
+	    			</ul>
+	    		</div>
+	        	<!--选择地址--end-->
+	        </div>
+	    </div>
+	</div>
+	
+	
+</div>

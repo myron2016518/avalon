@@ -1,0 +1,35 @@
+
+<div class="page-content" ms-controller="Category/Index">
+	<div id="main">
+	  <div class="cla_left">
+	  	<ul>
+	  		<li  ms-repeat="obj" ms-class-1="active: select_tab==el.id"><a href="javascript:void(0)" ms-click="tab_change(el)">{{el.name}}</a></li>
+	  	</ul>
+	  </div>
+	  <div class="cla_right" ms-include="'categoryTabInfotpl'"></div>
+   </div>
+
+</div>
+
+<script type="avalon" id="categoryTabInfotpl">
+	<div ms-repeat="sub_list">
+	    <div class="cla_title"><h3>{{el.name }}</h3></div>
+	  	<div class="pic-list">
+	  		<ul>
+  	  			<li ms-repeat-elem="el.sub"><img ms-attr-src="img(elem.picture)" width="100%" ms-click="item_click(elem)" ><p>  {{elem.name |truncate(5,'')}}</p></li>
+	  		</ul>
+	  	</div>
+  	</div>
+  	
+  	<div class="cla_title"><h3>同类推荐</h3></div>
+	  	<div class="pic-list">
+	  		<ul>
+	  			<li ms-repeat="recommend_list" ms-click='ff.service.goCommodity(el.goodsId)'>
+	  				<img ms-attr-src="img(el.imgPath)" width="100%">
+	  				<p class="price-now">￥{{el.discountPrice}}</p>
+	  				<p class="price-old">￥{{el.price}}</p>
+	  			</li>
+	  		</ul>
+	  	</div>
+
+</script>

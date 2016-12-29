@@ -1,0 +1,12 @@
+avalon  我们用的版本是 1.4  
+学习网站：这是1.4 版本的：
+http://www.cnblogs.com/rubylouvre/p/3181291.html#top10
+
+oniui   针对avalon 开发的框架:
+http://ued.qunar.com/oniui/index.html#!/widgets?widgetId=datepicker&ex=ex1
+
+
+官网：https://github.com/RubyLouvre/avalon
+
+
+项目还用到了jqweui  ：http://jqweui.com/

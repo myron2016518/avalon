@@ -1,0 +1,113 @@
+<div class="page-content" ms-controller="Coupon/My">
+
+	<div class=" result-sort">
+		<ul>
+			<li class="now"><a href="javascript:void(0);" ms-click="toCouponList(0)">未使用</a></li>
+			<li><a href="javascript:void(0);"  ms-click="toCouponList(1)">已使用</a><i class="bar"></i></li>
+			<li><a href="javascript:void(0);"  ms-click="toCouponList(2)">已过期</a><i class="bar"></i></li>
+		</ul>
+	</div>
+	<div class="coupon-list listbody">
+	<div ms-repeat="obj">
+	<div ms-if="el.status =='NOTUSE'">
+	<a href="javascript:void(0);" ms-click="to_detail(el)">
+		<dl>
+			<dt>
+					<h3>
+						<span>{{el.amount}}</span>元
+					</h3>
+					<p class="leftline">
+						<img class="img" src="images/line.png" alt="" />
+					</p>
+					<span class="coupon-txt">{{el.useCondition}}</span>
+				</dt>
+				<dd>
+					<ul>
+						<li>
+							<h3>{{el.title}}</h3>
+						</li>
+						<li>{{el.useDateStr}}</li>
+						<li>{{el.goodsType}}</li>
+					</ul>
+				</dd>
+				<img class="topico" src="images/linetop.png" alt="" />
+				<img class="linebottom" src="images/linebottom.png" alt="" />
+				<a href="javascript:void(0);" ms-click="to_detail(el)"
+					class="coupon-more icon-ico20"></a>
+				<div style="clear: both;"></div>
+			</dl>
+			</a>
+	</div>
+	
+	<div ms-if="el.status =='YETUSE'">
+	<a href="javascript:void(0);" ms-click="to_detail(el)">
+		<dl class="Expired">
+			<dt>
+					<h3>
+						<span>{{el.amount}}</span>元
+					</h3>
+					<p class="leftline">
+						<img class="img" src="images/line.png" alt="" />
+					</p>
+					<span class="coupon-txt">{{el.useCondition}}</span>
+				</dt>
+				<dd>
+					<ul>
+						<li>
+							<h3>{{el.title}}</h3>
+						</li>
+						<li>{{el.useDateStr}}</li>
+						<li>{{el.goodsType}}</li>
+					</ul>
+				</dd>
+				<img class="topico" src="images/linetop.png" alt="" />
+				<img class="linebottom" src="images/linebottom.png" alt="" />
+				<a href="javascript:void(0);" ms-click="to_detail(el)" class="coupon-more icon-ico20"></a>
+    			<div class="coupon-ico"><img src="images/Usedico.png" alt=""/></div>
+				<div style="clear: both;"></div>
+			</dl>
+			</a>
+	</div>
+	
+	<div ms-if="el.status =='YETTIMEOUT'">
+	<a href="javascript:void(0);" ms-click="to_detail(el)">
+		<dl class="Expired">
+			<dt>
+					<h3>
+						<span>{{el.amount}}</span>元
+					</h3>
+					<p class="leftline">
+						<img class="img" src="images/line.png" alt="" />
+					</p>
+					<span class="coupon-txt">{{el.useCondition}}</span>
+				</dt>
+				<dd>
+					<ul>
+						<li>
+							<h3>{{el.title}}</h3>
+						</li>
+						<li>{{el.useDateStr}}</li>
+						<li>{{el.goodsType}}</li>
+					</ul>
+				</dd>
+				<img class="topico" src="images/linetop.png" alt="" />
+				<img class="linebottom" src="images/linebottom.png" alt="" />
+				<a href="javascript:void(0);" ms-click="to_detail(el)" class="coupon-more icon-ico20"></a>
+    			<div class="coupon-ico"><img src="images/Expiredico.png" alt=""/></div>
+				<div style="clear: both;"></div>
+			</dl>
+			</a>
+	</div>
+	</div>
+	</div>
+	<div ms-if="obj.length==0">
+		<div style="position: absolute; left: 0; right: 0;top:50%; margin: -30px 0 0 0;text-align: center;height: 60px;">暂时没有优惠券</div>
+	</div>
+	<div class="js" style="display: none;">
+		<div class="jsbody">
+			<a href="#" class="closeDialog"><img class="img"
+				src="images/Close.png" alt="" /></a>你已经是大麦场老朋友噢，前往APP
+		</div>
+	</div>
+
+</div>

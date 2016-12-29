@@ -1,0 +1,83 @@
+<div class="page-content" ms-controller="Pay/Index">
+ 
+	<div class="confirm">
+	<!--内容区-start-->
+		<div class="confirm-add-info" ms-click="select_addr">
+			<dl>
+				<dd>收货人：{{addr.consignee}}</dd>
+				<dd class="address-tel">{{addr.phone}}</dd>
+				<dd class="address-dd"><span>收货地址：</span><p>{{addr.regionName}}{{addr.detailedAddress}}</p></dd>
+			</dl>
+			<a href="javascript:void(0);"><span class="icon-ico20 icon-arrow"></span></a>
+		</div>
+		<div class="confirm-pro-info" ms-repeat="obj">
+			<div class="box-list">
+				<a class="detail-an">
+					<div class="box-img">
+						<img ms-attr-src="img(el.commoditySkuPic)">
+					</div>
+					<div class="box-text">
+						<h1>{{el.commodityTitle}}</h1>
+						<p class="box-size">{{el.skuAttrs}}</p>
+						<p class="box-price">￥{{el.favourablePrice}}</p>
+						<p class="box-num">X{{el.cartNum}}</p>
+					</div>
+				</a>
+			</div>
+ 
+		</div>
+		<div class="use-coupon">
+			<div class="use-coupon-div">
+				<!--<div class="check_box"> <a href="javascript:void(0);"  ms-click="defaultReceipt" ms-class="dmc_checked: defaultReceiptStrat" class="dmc_check_box"></a> </div>-->
+				<div class="check_box ffwx_check_box">
+					<label>
+						<input type="checkbox" name="checkboxPay" class="dmc_check_box" ms-checked="coupon_select" ms-click="check_coupon()" ms-disabled='null == coupon_list || coupon_list.length == 0 || null == coupon'>
+						<i class="weui_icon_checked ffwx_icon_checked"></i>
+					</label>
+				</div>
+				<div class="use-text" ms-if='!coupon_select' >请选择优惠券</div>
+				<div class="use-text" ms-if='coupon_select' >{{coupon.title}}</div>
+				<div class="use-text2">
+				
+			 
+				  <a href="javascript:void(0);"  ms-if='null == coupon_list || coupon_list.length == 0'>没有满足条件的优惠券
+				     <span class="icon-ico20" ></span>
+				  </a>
+				  
+				  <a href="javascript:void(0);" ms-click='select_coupon' ms-if='null != coupon_list && coupon_list.length > 0'>您有{{coupon_list.length}}张优惠券可用
+				     <span class="icon-ico20" ></span>
+				  </a>
+			 
+		 
+				  
+				</div>
+			</div>
+			<div class="use-invoice">
+				<!--<div class="check_box"> <a href="javascript:void(0);"  ms-click="defaultReceipt" ms-class="dmc_checked: defaultReceiptStrat"  class="dmc_check_box "><span ms-class="icon-ico26: defaultReceiptStrat" ></span></a> </div>-->
+				<div class="check_box ffwx_check_box">
+					<label>
+						<input type="checkbox" name="checkboxPay" class="dmc_check_box" value="1qaz2wsx">
+						<i class="weui_icon_checked ffwx_icon_checked"></i>
+					</label>
+				</div>
+				<div class="use-text">我要发票</div>
+			</div>
+		</div>
+		<div class="confirm-total">
+			<div class="total-1">
+				<p>共{{total_num}}件商品</p>
+				<p class="confirm-price">￥{{to_fixed(total_price)}}</p>
+			</div>
+			<div class="total-1 total-2">
+				<p>运费</p>
+				<p class="confirm-price">￥0.00</p>
+			</div>
+		</div>
+		<div class="confirm-pay">
+			<div class="pay-div">总价：<span>￥{{to_fixed(buy_price)}}</span></div>
+			<a href="javascript:void(0);" class="btn-payment" ms-click="submit">微信支付</a>
+		</div>
+		<!--内容区-end-->
+	</div>
+
+</div>

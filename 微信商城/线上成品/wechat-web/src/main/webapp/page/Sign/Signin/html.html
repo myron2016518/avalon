@@ -1,0 +1,23 @@
+<div class="page-content" ms-controller="Sign/Signin">
+	<div class="member">
+	  <div class="member-logo"><img src="images/member-logo.png" alt=""/></div>
+	  <div class="member-form">
+	    <form class="member-table login" ms-widget="validation">
+	      <dl class="line">
+	        <dt><span class="icon-ico24"></span></dt>
+	        <dd>
+	          <input name="textfield" ms-duplex="obj.phone"  ms-on-keyup="check"  data-duplex-minlength="11" maxlength="11" placeholder='请输入手机号' type="text" class="Memberin" id="phone">
+	        </dd>
+	      </dl>
+	      <dl>
+	        <dt><span class="icon-ico25"></span></dt>
+	        <dd style="padding-right:4rem;"><a href="javascript:void(0);"  ms-click="toFindpwPhone()" class="login-password">找回密码</a>
+	          <input name="textfield" type="password" ms-duplex="obj.password"   placeholder='请输入密码' class="Memberin" id="textfield" value="">
+	        </dd>
+	      </dl>
+	    </form>
+	    <div class="dmc-btn"><a id="submi" href="javascript:void(0);"  ms-click="send()"   class="dmc-btn-dark true">登 录</a></div>
+	  </div>
+	  <div class="findPwd-text"><a href="javascript:void(0);"  ms-click="toPhone()" class="dmc-btnan">免费注册</a><!-- <a href="#">手机号快捷登录</a> --></div>
+	</div>	
+</div>

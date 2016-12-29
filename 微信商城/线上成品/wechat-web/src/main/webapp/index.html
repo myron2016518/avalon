@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="非凡之星">
+<meta name="keywords" content="非凡之星">
+<meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1" media="(device-height: 568px)">
+<title>微信商城 - 大麦场</title>
+<link rel="stylesheet" href="css/weui.min.css">
+<link rel="stylesheet" href="css/jquery-weui.css">
+<style>
+[ms-controller]{visibility:hidden;}
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ld6vxx');
+  src:  url('fonts/icomoon.eot?ld6vxx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ld6vxx') format('truetype'),
+    url('fonts/icomoon.woff?ld6vxx') format('woff'),
+    url('fonts/icomoon.svg?ld6vxx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ico1:before {
+  content: "\e900";
+}
+.icon-ico2:before {
+  content: "\e901";
+}
+.icon-ico3:before {
+  content: "\e902";
+}
+.icon-ico4:before {
+  content: "\e903";
+}
+.icon-ico5:before {
+  content: "\e904";
+}
+.icon-ico6:before {
+  content: "\e905";
+}
+.icon-ico7:before {
+  content: "\e906";
+}
+.icon-ico8:before {
+  content: "\e907";
+}
+.icon-ico9:before {
+  content: "\e908";
+}
+.icon-ico10:before {
+  content: "\e909";
+}
+.icon-ico11:before {
+  content: "\e90a";
+}
+.icon-ico12:before {
+  content: "\e90b";
+}
+.icon-ico13:before {
+  content: "\e90c";
+}
+.icon-ico14:before {
+  content: "\e90d";
+}
+.icon-ico15:before {
+  content: "\e90e";
+}
+.icon-ico16:before {
+  content: "\e90f";
+}
+.icon-ico17:before {
+  content: "\e910";
+}
+.icon-ico18:before {
+  content: "\e911";
+}
+.icon-ico19:before {
+  content: "\e912";
+}
+.icon-ico20:before {
+  content: "\e913";
+}
+.icon-ico21:before {
+  content: "\e914";
+}
+.icon-ico22:before {
+  content: "\e915";
+}
+.icon-ico23:before {
+  content: "\e916";
+}
+.icon-ico24:before {
+  content: "\e917";
+}
+.icon-ico25:before {
+  content: "\e918";
+}
+.icon-ico26:before {
+  content: "\e919";
+}
+.icon-ico27:before {
+  content: "\e91a";
+}
+.icon-ico28:before {
+  content: "\e91b";
+}
+.icon-ico29:before {
+  content: "\e91c";
+}
+.icon-ico30:before {
+  content: "\e91d";
+}
+.icon-ico31:before {
+  content: "\e91e";
+}
+.icon-ico32:before {
+  content: "\e91f";
+}
+.icon-ico33:before {
+  content: "\e920";
+}
+.icon-ico34:before {
+  content: "\e921";
+}
+.icon-ico35:before {
+  content: "\e922";
+}
+.icon-ico36:before {
+  content: "\e923";
+}
+.icon-ico37:before {
+  content: "\e924";
+}
+.icon-ico38:before {
+  content: "\e925";
+}
+.icon-ico39:before {
+  content: "\e926";
+}
+.icon-ico40:before {
+  content: "\e927";
+}
+.icon-ico41:before {
+  content: "\e928";
+}
+.icon-ico42:before {
+  content: "\e929";
+}
+.icon-ico43:before {
+  content: "\e92a";
+}
+.icon-ico44:before {
+  content: "\e92b";
+}
+.icon-ico45:before {
+  content: "\e92c";
+}
+.icon-ico46:before {
+  content: "\e92d";
+}
+.icon-ico47:before {
+  content: "\e92e";
+}
+.icon-ico48:before {
+  content: "\e92f";
+}
+.icon-ico49:before {
+  content: "\e930";
+}
+.icon-ico50:before {
+  content: "\e931";
+}
+.icon-ico51:before {
+  content: "\e932";
+}
+.icon-ico52:before {
+  content: "\e933";
+}
+.icon-ico53:before {
+  content: "\e934";
+}
+.icon-ico54:before {
+  content: "\e935";
+}
+.icon-ico55:before {
+  content: "\e936";
+}
+.icon-ico56:before {
+  content: "\e937";
+}
+.icon-ico57:before {
+  content: "\e938";
+}
+.icon-ico58:before {
+  content: "\e939";
+}
+.icon-ico59:before {
+  content: "\e93a";
+}
+.now .icon-ico59:before {
+  content: "\e93b";
+}
+.icon-ico61:before {
+  content: "\e93c";
+}
+.now .icon-ico61:before {
+  content: "\e93d";
+}
+.icon-ico63:before {
+  content: "\e93e";
+}
+.now .icon-ico63:before {
+  content: "\e93f";
+}
+.icon-ico65:before {
+  content: "\e940";
+}
+.now .icon-ico65:before {
+  content: "\e941";
+}
+.icon-ico67:before {
+  content: "\e942";
+}
+.now .icon-ico67:before {
+  content: "\e943";
+}
+
+
+</style>
+<link href="css/mobile.css" rel="stylesheet" type="text/css" />
+<link href="css/css.css" rel="stylesheet" type="text/css" />
+<link href="base/css/base.css?20161115-2" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="base" class="weui_tab" ms-controller="base">	
+	<div class="weui_tab_bd">
+		<div class="search" style="position:absolute;width:100%;">
+			<div ms-visible="search" ms-class-1="loading-hide frame frameScroll" ms-class-2="hd_bar: page != 'Home/Index'">
+			  <form >
+				<input name="searchInput" type="text" id="searchInput" value="搜索你想找的商品名称" defaultValue="搜索你想找的商品名称"  class="hd_search_txt">
+			  </form>
+			  <div class="hd_me"> 
+			  <a href="javascript:void(0);" id="goMsg" ms-click="go_page('Message/Index')">
+				<span></span>
+			  </a> 
+			  </div>
+			</div>
+		</div>
+		<div class="hd_download" ms-visible="topAd && page == 'Home/Index'"><a href="javascript:void(0)" class="Close" ms-click="hideAd()"><span class="icon-ico1"></span></a> <img src="images/download_img.jpg" alt="" id="downImg"/> </div>		
+		
+		<div ms-class-1="homebg: page == 'Home/Index'" ms-class-2="centerbody: page != 'Home/Index'">
+			
+			<div id="content" class="content" ms-include-src="page" data-include-loaded="base_loaded" data-include-rendered="base_rendered"></div>
+			
+			<div class="weui-infinite-scroll" ms-visible="load_more">
+				<div class="infinite-preloader"></div>
+				正在加载
+			</div>
+			<div class="No_more" ms-visible="no_more">没有更多啦~</div>
+		</div>
+	</div>		
+
+	<div class="weui_tabbar bottom-menu">
+	  <ul>
+		<li><a href="javascript:void(0);" class="Home now" ms-click="go_page('Home/Index', {ifGoTop: true})"><span class="icon-ico59 titleico"></span>
+	        <p>首页</p>
+	        </a></li>
+		<li><a href="javascript:void(0);" class="Category" ms-click="go_page('Category/Index', {ifGoTop: true})"><span class="icon-ico61 titleico"></span>
+        <p>分类</p>
+        </a></li>
+      <li><a href="javascript:void(0);" class="Dmc" ms-click="go_page('Dmc/Index', {ifGoTop: true})"><span class="icon-ico63 titleico"></span>
+        <p>大麦场</p>
+        </a></li>
+      <li><a href="javascript:void(0);" class="Cart" ms-click="go_page('Cart/Index', {ifGoTop: true})"><span class="icon-ico65 titleico" ><em ms-visible="cart_count != 0">{{cart_count}}</em> </span>
+        <p>购物车</p>
+        </a></li>
+      <li><a href="javascript:void(0);" class="My" ms-click="go_page('My/Index', {ifGoTop: true})"><span class="icon-ico67 titleico"></span>
+        <p>我的</p>
+       </a></li>
+	  </ul>
+	</div>	
+</div>
+
+	<script src="base/js/jquery/jquery.min.js"></script>	
+	<script src="lib/weui/lib/fastclick.js"></script>	
+	<script src="lib/weui/js/jquery-weui.js?20161115-1"></script>	
+	<script src="base/js/requirejs/require.js"></script>
+	<script src="base/js/base.js?20161117-1"></script>
+    <script src="base/js/ff/ff.res.js"></script>
+     
+	<script type="text/javascript">
+	$(function(){
+		$("#searchInput").click(function(){
+			var cid = "";
+			if("Category/Index"==FFWX.currPage){//如果当前页是商品类目
+				var vm = ff.page.vm('Category/Index');
+				if(vm && vm.select_tab!='0'){
+					cid = vm.select_tab;
+				}
+			}
+			ff.page.go({url:"Commodity/Search",data:{cid:cid}});
+		})
+		
+		$("#downImg").click(function (){
+			/* var ua = navigator.userAgent.toLowerCase();
+			if(!/iphone|ipad|ipod/.test(ua)){
+				
+			}else{
+
+			} */
+			//http://www.dmaichang.com/download
+			location.href="http://www.dmaichang.com/download";
+		});
+	})
+	
+ 
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?a35fdfd78d6a31a5f1372a94504c9d9f";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+ 
+
+	</script>
+</body>
+</html>

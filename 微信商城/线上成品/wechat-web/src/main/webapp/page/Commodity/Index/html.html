@@ -1,0 +1,52 @@
+<div class="page-content" ms-controller="Commodity/Index"> 
+	
+	<div class="pro-list" ms-visible="null != obj && obj.length != 0" ms-repeat="obj" >
+	  <div class="prolist1">
+		<div class="prolist-img">
+			<a href="javascript:void(0)" ms-click="commodityItemClick(el)">
+			  <img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.finalImageUrl) +')'" />
+			  <div class="sold-out" ms-if="!judgeEnough(el)">
+				<p><span>无货</span>sold out</p>
+			  </div>
+		   </a> 
+		</div>
+		<div class="prolist-right">
+		  <a href="javascript:void(0)" ms-click="commodityItemClick(el)">
+			<div class="prolist-title" >{{el.finalTitle}}</div>
+		  </a>
+		  <div class="listprice">
+			<div class="price-box">
+			  <div ms-if="judgeVip(el)" class="Mobiletxt" ms-visible="exclusive_price"><span class="icon-ico14 Mobileico"></span>专享价</div>
+			  <div class="price-txt">已售{{el.saleNum}}件</div>
+			</div>
+			<div class="shop-num">
+				<a href="javascript:void(0)" ms-if="judgeEnough(el) && el.skuId" ms-click="openWindow(el,1)" class="cartbutton open-popup" data-target="#half-attr">加入购物车</a> 
+				<a href="javascript:void(0)" ms-if="judgeEnough(el) && !el.skuId" ms-click="openWindow(el,1)" class="cartbutton open-popup" data-target="#half">加入购物车</a> 
+				<a href="javascript:void(0)" ms-if="!judgeEnough(el)" class="Nobutton" data-target="#half">加入购物车</a> 
+				<span class="e-price">¥ {{el.lowPrice | number(2)}}</span>
+				<span class="or-price">¥ {{el.price | number(2)}}</span> 
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+	<!-- 未搜索到商品 -->
+	
+	<div class="weui_tab_bd" ms-if="null == obj || obj.length == 0">
+  		<div class="search-no"><dl><dt class="icon-ico28"></dt><dd>没有找到相关商品</dd></dl></div>
+  	</div>
+	<div ms-if="null != obj && obj.length != 0">
+		<div class="weui_navbar result-sort" >
+			<ul>
+			  <li class="now"><a href="javascript:void(0)" ms-click="sortList('sales',1,this)">按销量排序</a></li>
+			  <li><a href="javascript:void(0)" ms-click="sortList('price',1,this)">价格从高到低</a><i class="bar"></i></li>
+			  <li><a href="javascript:void(0)" ms-click="sortList('price',0,this)">价格从低到高</a><i class="bar"></i></li>
+			</ul>
+		</div>
+		
+	     <!-- 购物车模块 -->
+	    <div ms-include-src="'page/Cart/Window/html.html'" data-include-replace="true"></div>	
+	    <div class="No_more" id="NoMore" style="display:none;">没有更多啦~</div>
+    </div>
+</div>

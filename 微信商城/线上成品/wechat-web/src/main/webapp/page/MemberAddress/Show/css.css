@@ -1,0 +1,6 @@
+#pageMemberAddressShow  #base{padding-bottom:0;}
+#pageMemberAddressShow .page-content,
+	#pageMemberAddressShow .address{height:100%;background-color:#ffffff;overflow:hidden;}
+#pageMemberAddressShow .bottom-menu{display:none;}
+#pageMemberAddressShow .form-div .fill-address span {color:#323232;display:inline-block;line-height:1.2rem;margin-top:0.65rem;}
+#pageMemberAddressShow .full-address{width:95%;}

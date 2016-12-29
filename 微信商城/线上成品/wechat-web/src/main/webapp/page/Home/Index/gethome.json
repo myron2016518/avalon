@@ -1,0 +1,232 @@
+{
+  "resultMsg": "接口调用成功！",
+  "resultData": {
+    "homebannerList":[
+		{
+		    "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+		    "imgUrl": "images/banner.jpg",
+		    "name": "bann1",
+		    "path": "#"
+		  },
+		  {
+		    "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+		    "imgUrl": "images/banner.jpg",
+		    "name": "bann1",
+		    "path": "#"
+		  },
+		  {
+		    "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+		    "imgUrl": "images/banner.jpg",
+		    "name": "bann1",
+		    "path": "#"
+		  }            
+      ],
+    "homeicoList": [
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico1.jpg",
+        "name": "预购商城",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico2.jpg",
+        "name": "日常用品",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico3.jpg",
+        "name": "品牌服饰",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico4.jpg",
+        "name": "美食汇",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico5.jpg",
+        "name": "话费充值",
+        "path": "Home/Recharge"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico6.jpg",
+        "name": "家电城",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico7.jpg",
+        "name": "麦场批发",
+        "path": "#"
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/ico8.jpg",
+        "name": "家居家纺",
+        "path": "#"
+      }
+    ],
+    "homenewsList":{"title":"【抢】","content":"小米笔记本零元抢购，仅限10000000台...","path":"#a"},
+    "homeseckillList":{
+      "title":"限时秒杀",
+      "more":"更多抢购",
+      "path":"#a",
+      "item":[
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img20.jpg",
+          "name": "",
+          "path": "#",
+          "presentPrice": 20,
+          "discountPrice": 10
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img20.jpg",
+          "name": "",
+          "path": "#",
+          "presentPrice": 120,
+          "discountPrice": 10
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img20.jpg",
+          "name": "",
+          "path": "#",
+          "presentPrice": 30,
+          "discountPrice": 20
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img20.jpg",
+          "name": "",
+          "path": "#",
+          "presentPrice": 40,
+          "discountPrice": 30
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img20.jpg",
+          "name": "",
+          "path": "#",
+          "presentPrice": 50,
+          "discountPrice": 40
+        }
+      ],
+      "box":[
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img1.jpg",
+          "name": "",
+          "path": "#"
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img2.jpg",
+          "name": "",
+          "path": "#"
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img3.jpg",
+          "name": "",
+          "path": "#"
+        },
+        {
+          "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+          "imgUrl": "images/img4.jpg",
+          "name": "",
+          "path": "#"
+        }
+      ]
+    },
+    "bannerOne": {"imgUrl": "images/ad-1.jpg","path": "#"},
+    "homeSelected": {
+      "title": "麦场精选",
+      "itemOne": {"imgUrl": "images/img5.jpg","path": "#"},
+      "itemRowTwo": [{"imgUrl": "images/img6.jpg","path": "#"},{"imgUrl": "images/img7.jpg","path": "#"}],
+      "itemCellTwo": [{"imgUrl": "images/img8.jpg","path": "#"},{"imgUrl": "images/img9.jpg","path": "#"}]
+    },
+    "bannerTwo": {"imgUrl": "images/ad-2.jpg","path": "#"},
+    "homeHotMarket": {
+      "title": "热门市场",
+      "itemRowTwo": [{"imgUrl": "images/img10.jpg","path": "#"},{"imgUrl": "images/img11.jpg","path": "#"}],
+      "itemCellThree": [{"imgUrl": "images/img12.jpg","path": "#"},{"imgUrl": "images/img13.jpg","path": "#"},{"imgUrl": "images/img14.jpg","path": "#"},{"imgUrl": "images/img15.jpg","path": "#"},{"imgUrl": "images/img16.jpg","path": "#"},{"imgUrl": "images/img17.jpg","path": "#"}]
+    },
+    "bannerThree": {"imgUrl": "images/ad-3.jpg","path": "#"},
+    "homeTabList": [
+      {"name": "今日精选","path": "#","id":"1"},{"name": "蔬菜水果","path": "#","id":"2"},{"name": "酒类","path": "#","id":"3"},
+      {"name": "休闲食品","path": "#","id":"4"},{"name": "粮油副食","path": "#","id":"5"},{"name": "粮油副食2","path": "#","id":"6"}
+    ],
+    "homeTabDefaultId":"1",
+    "homeTabListItem": [
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/img18.jpg",
+        "name": "蓝月亮1 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+        "path": "#",
+        "pice": 38.00
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/img18.jpg",
+        "name": "蓝月亮2 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+        "path": "#",
+        "pice": 38.00
+      },
+      {
+        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+        "imgUrl": "images/img18.jpg",
+        "name": "蓝月亮3 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+        "path": "#",
+        "pice": 38.00
+      }
+
+    ],
+    "homeTabListItemChange": [
+          {
+            "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+            "imgUrl": "images/img18.jpg",
+            "name": "蓝月亮1 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+            "path": "#",
+            "pice": 38.00
+          },
+          {
+            "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+            "imgUrl": "images/img18.jpg",
+            "name": "蓝月亮2 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+            "path": "#",
+            "pice": 38.00
+          },
+          {
+            "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+            "imgUrl": "images/img18.jpg",
+            "name": "蓝月亮3 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+            "path": "#",
+            "pice": 38.00
+          },
+          {
+  	        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+  	        "imgUrl": "images/img18.jpg",
+  	        "name": "蓝月亮3 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+  	        "path": "#",
+  	        "pice": 38.00
+  	    },
+          {
+  	        "id": "4c868950-5e3f-43ba-ae14-dae2811c00ac",
+  	        "imgUrl": "images/img18.jpg",
+  	        "name": "蓝月亮3 深层洁净护理洗衣液(薰衣草) 3kg/瓶",
+  	        "path": "#",
+  	        "pice": 38.00
+          }
+     ]
+
+  },
+  "resultType": 1
+}
+

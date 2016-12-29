@@ -1,0 +1,137 @@
+<div class="page-content" ms-controller="ActivityCommodity/Index">
+	<div class="weui_tab">
+		<div class="weui_tab_bd">			
+			
+			<div class="find_nav">
+				<div class="find_nav_left">
+					<div class="Tabtitle find_nav_list">
+						<ul>
+							<li ms-repeat="sub_list" ms-class-1="current: select_tab==el.activityId"
+								ms-class-2="current: 1==el.isCheck"  >
+								<a href="javascript:;" ms-click="tab_change(el,'0')"> <i>{{el.minuteSecond}}</i><em>{{el.states}}</em></a>
+							</li>		
+						</ul>
+					</div>
+				</div>
+			</div>			
+			
+			<div class="pagebanner">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div  class="swiper-slide" ms-repeat="homeicoList"><a href="javascript:void(0)" ms-click="clickAdvert(el)"  ><img ms-attr-src="img(el.imgPath)" alt=""/></a></div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			
+			<div class="palmrobtimes" ms-if='null != obj && obj.length > 0'>
+				<div class="title" >
+					{{obj[0].panicDate.rangeDateString}}<span id="time_diff_span" ></span>
+  				</div>
+				<span class="timestxt">{{obj[0].panicDate.prompt}}</span>
+			</div>
+
+			<div class="Tabbody" ms-include="'categoryTabInfotpl'"></div>
+			<div class="No_more">没有更多啦~</div>
+			<!--内容区-->
+		</div>
+
+	</div>
+
+</div>
+
+ 
+<script type='avalon' id='categoryTabInfotpl'> 
+	<div class="pro-item" ms-repeat-elem="obj" >
+		<div ms-click="item_click(elem)" ms-if="(elem.panicDate.status=='1') ||  (elem.panicDate.status=='2' && (elem.isAllowFlag=='1'))" style="width:100%">
+			<div class="info-img">
+				<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(elem.activityImgPath) +')'" />
+			</div>
+			<div class="info-bar">
+				<div class="pro-title" >{{elem.activityTitle}}</div>
+				<div class="price">
+					<span class="e-price">￥{{elem.discountPrice | number(2)}}</span><span
+						class="or-price">￥{{elem.price | number(2)}}</span>
+				</div>
+	 		</div>
+		</div>
+		
+		<div ms-click="itemRecommend_click(elem)"  ms-if="(elem.panicDate.status=='3') || (elem.panicDate.status=='2' && (elem.isAllowFlag!='1'))" style="width:100%"> 
+		
+			<div class="info-img">
+				<img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(elem.activityImgPath) +')'" />
+			</div>
+			<div class="info-bar">
+				<div class="pro-title" >{{elem.activityTitle}}</div>
+				<div class="price">
+					<span class="e-price">￥{{elem.discountPrice | number(2)}}</span>
+                    <span class="or-price">￥{{elem.price | number(2)}}</span>
+				</div>
+	 		</div>	 		
+		</div>
+		
+		<div class="pro-info2 red" ms-if="(elem.panicDate.status=='2' && (elem.isAllowFlag=='1')) && (elem.presaleCount !=elem.limit)">
+			<!--抢购-->
+			<dl>
+				<dt>
+					<div class="sale-percent">
+						<div class="s-dot" ms-attr-style="'width:'+elem.presaleCount/elem.limit*100+'%'"></div>
+						<span class="s-per-text">已售{{elem.presaleCount}}件</span>
+					</div>
+				</dt>
+				<dd>
+					<a href="javascript:;" ms-click="item_click(elem)" > 马上抢购 </a>
+				</dd>
+			</dl>
+		</div>
+		<div class="pro-info2 end" ms-if="(elem.panicDate.status=='2' && (elem.isAllowFlag!='1'))|| (elem.presaleCount==elem.limit)" ><!-- 不可以购买，已抢完 -->
+			<!--抢购-->
+			<dl>
+				<dt>
+					<div class="sale-percent">
+						<div class="s-dot" style="width: 20%"></div>
+						<span class="s-per-text">{{elem.presaleCount}}件抢光啦</span>
+					</div>
+				</dt>
+				<dd>
+					<a href="javascript:;"  > 已经抢完 </a>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="pro-info2 green" ms-if="elem.panicDate.status=='1'">
+			<!--未开始-->
+			<dl>
+				<dt>
+					<div class="sale-percent">
+						<div class="s-dot" style="width: 80%"></div>
+						<span class="s-per-text">{{elem.remindCount}}人已关注</span>
+					</div>
+				</dt>
+				<dd ms-if="elem.isRemind=='0'">
+					<a href="javascript:;" ms-click="is_remind(elem,'REMIND')">提醒我</a>
+				</dd>
+				<dd ms-if="elem.isRemind=='1'">
+					<a class='no' href="javascript:;" ms-click="is_remind(elem,'CANCEL')">取消提醒</a>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="pro-info2 end" ms-if="elem.panicDate.status=='3'">
+			<!--已结束-->
+			<dl>
+				<dt>
+					<div class="sale-percent">
+						<div class="s-dot" style="width: 80%"></div>
+						<span class="s-per-text">谢谢您的关注！</span>
+					</div>
+				</dt>
+				<dd>
+					<a href="javascript:;" class="no">已结束</a>
+				</dd>
+			</dl>
+		</div>
+  </div>
+</script>
+ 

@@ -1,0 +1,17 @@
+/* Home CSS */
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+.categoryList {
+	width: 13%;
+	text-align: center;
+	text-align: -webkit-center;
+	float: left;
+}
+
+.categoryInfo {
+	float: left;
+	width: 87%;
+}

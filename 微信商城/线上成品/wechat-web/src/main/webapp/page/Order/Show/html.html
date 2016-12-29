@@ -1,0 +1,154 @@
+<div class="page-content" ms-controller="Order/Show">
+
+<!--交易完成-start-->
+			<div class="success"> 
+			 
+			  <div class="part-1">
+			    <h3><span class="icon-ico45"></span>{{formatter(obj.status)}}</h3>
+			    <div ms-if="obj.status ==0">
+					<p>请在{{obj.overHours}}之前完成付款</p>
+					<p>过时订单将自动取消</p>
+				</div>
+				<div ms-if="obj.status==1">
+					<p>大麦场将尽快为您送达！</p>
+				</div>
+				<div ms-if="obj.status==2">
+					<p>您的申请正在处理中，请耐心等候......</p>
+				</div>
+				<div ms-if="obj.status==3">
+					
+				</div>
+				<div ms-if="obj.status==4">
+					<p>感谢您在大麦场购物，欢迎您再次光临！</p>
+				</div>
+				<div ms-if="obj.status==5">
+					<div ms-if="obj.operateCause=='AUTOCANCEL'">
+						<p>原因：超时未支付</p>
+					</div>
+					<div ms-if="obj.operateCause=='ACTIVITYCANCEL'">
+						<p>原因：用户取消订单</p>
+					</div>
+				</div>
+			    
+			  </div>
+			  <div class="part-2">
+			    <dl class="now">
+			      <dt><span class="icon-ico41"></span></dt>
+			      <dd>{{obj.orderLineRecord.desc}}</dd>
+			      <div ms-if="obj.status==1">
+			      	<a href="javascript:void(0);" ms-click="logistics(obj)" class="add-an icon-ico20"></a>
+			      </div>
+			      <div ms-if="obj.status==2">
+			      	<a href="javascript:void(0);" ms-click="logistics(obj)" class="add-an icon-ico20"></a>
+			      </div>
+			      <div ms-if="obj.status==4">
+			      	<a href="javascript:void(0);" ms-click="logistics(obj)" class="add-an icon-ico20"></a>
+			      </div>
+			      <dd class="add-time">{{obj.orderLineRecord.time}}</dd>
+			    </dl>
+			    <dl>
+			      <dt><span class="icon-ico42"></span></dt>
+			      <dd>收货人：{{obj.address.name}}</dd>
+			      <dd class="address-tel">{{obj.address.phone}}</dd>
+			      <dd class="address-dd"><span>收货地址：</span>
+			        <p>{{obj.address.addressInfo}}</p>
+			      </dd>
+			    </dl>
+			    <dl style="border:none;">
+			      <div class="refund-txt">
+			        <ul>
+			          <li><span>{{obj.orderNumber}}</span>订单号</li>
+			          <li><span>{{obj.time}}</span>确认订单时间</li>
+			          <li><span>{{obj.payTime}}</span>完成付款时间</li>
+			          <li><span>送货上门</span>配送方式</li>
+			          <li>
+			          	<div ms-if="obj.isInvoice==0">
+			          		<span>无</span>发票信息
+			          	</div>
+			          	<div ms-if="obj.isInvoice==1">
+			          		<span>有</span>发票信息
+			          	</div>
+			          </li>
+			        </ul>
+			      </div>
+			    </dl>
+			  </div>
+			  <div class="orderbody">
+			    <div class="order-title">商品信息</div>
+			    <div ms-repeat="obj.goods">
+				    <div class="box-list"> <a class="detail-an">
+				      <div class="box-img"> <img src="base/img/blank-square.gif" class="bg-cover-square" ms-css-background-image="'url(' + img(el.imgPath) +')'"> </div>
+				      <div class="box-text">
+				        <h1>{{el.title}}</h1>
+				        <p class="box-size">{{el.goodsAttr}}</p>
+				        <p class="box-price">￥{{el.discountPrice | number(2)}}</p>
+				        <p class="box-num">X{{el.count}}</p>
+				      </div>
+				      </a>
+				      <div ms-if="el.goodsStatus==0">
+				      	<div ms-if="obj.status==1">
+					      	<div ms-if="$index==obj.goods.length -1">
+					      		<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefound(obj,el.skuId)">申请售后</a></div>
+					      	</div>
+				      	</div>
+				      	<div ms-if="obj.status==4">
+				      		<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefound(obj,el.skuId)">申请售后</a></div>
+				      	</div>
+				      </div>
+				      <div ms-if="el.goodsStatus==1">
+				      	<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefoundDetail(el,el.skuId)">{{format(el)}}</a></div>
+				      </div>
+				      <div ms-if="el.goodsStatus==2">
+				      	<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefoundDetail(el,el.skuId)">{{format(el)}}</a></div>
+				      </div>
+				      <div ms-if="el.goodsStatus==3">
+				      	<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefoundDetail(el,el.skuId)">{{format(el)}}</a></div>
+				      </div>
+				      <div ms-if="el.goodsStatus==4">
+				      	<div class="order-Applyan"><a href="javascript:void(0);" ms-click="toRefoundDetail(el,el.skuId)">{{format(el)}}</a></div>
+				      </div>
+				      
+				    </div>
+			    </div>
+			    <div class="refund-txt pinfo">
+			      <ul>
+			        <li><span>￥{{obj.price | number(2)}}</span>商品金额</li>
+			        <li><span>-￥{{obj.couponPrice | number(2)}}</span>优惠</li>
+			        <li><span>+￥0.00</span>运费</li>
+			      </ul>
+			    </div>
+			    <div class="order-txt">共{{obj.goods.length}}件商品　实付款<span class="pro-Price">￥{{obj.totalPrice | number(2)}}</span></div>
+			  </div>
+			  
+			  <div ms-if="obj.status ==0">
+			  		<div class="View_details"><a href="javascript:void(0);"  ms-click="toPay(obj)" class="now">去付款</a>
+					<a href="javascript:void(0);" ms-click="cancel(obj)">取消订单</a>
+					</div>
+				</div>
+				<div ms-if="obj.status==1">
+					<div class="View_details"><a href="javascript:void(0);" ms-click="logistics(obj)" class="now">查看物流</a></div>
+				</div>
+				<div ms-if="obj.status==2">
+					<div class="View_details"><a href="javascript:void(0);" ms-click="logistics(obj)" class="now">查看物流</a></div>
+				</div>
+				<div ms-if="obj.status==3">
+					<div class="View_details">
+						<a href="javascript:void(0);" ms-click="orderDelete(obj)">删除订单</a>
+					</div>
+				</div>
+				<div ms-if="obj.status==4">
+					<div class="View_details"><a href="javascript:void(0);" ms-click="logistics(obj)" class="now">查看物流</a>
+						<div ms-if="can_delete==true">
+							<a href="javascript:void(0);" ms-click="orderDelete(obj)">删除订单</a>
+						</div>
+					</div>
+				</div>
+				<div ms-if="obj.status==5">
+					<div class="View_details">
+						<a href="javascript:void(0);" ms-click="orderDelete(obj)">删除订单</a>
+					</div>
+				</div>
+			  
+			</div>
+			<!--交易完成-end-->
+</div>

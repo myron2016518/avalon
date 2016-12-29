@@ -1,0 +1,51 @@
+<div class="page-content" ms-controller="MemberAddress/Index" style="height: 100%;">
+	
+	
+	<!--内容区-start-->
+		<div class="wrapper-scroll" style="overflow: auto;height: 100%;">
+			<div class="address" ms-repeat="obj">
+				<dl class="address-list-dl">
+					<dt>
+						<h3>我的收货地址{{$index+1}}<span ms-if="el.isDefault == '1'">（默认地址）</span></h3>
+						<div class="operating">
+							<a href="javascript:void(0);" id="show-confirm" ms-click="toDelete(el)"><span class="icon-ico30"></span>删除</a>
+							<a href="javascript:void(0);"  ms-click="goEdit(el)" ><span class="icon-ico31"></span>修改</a>
+						</div>
+					</dt>
+					<dd>
+						<div class="receiver-info" ms-click='select_addr(el)'>
+							<p>{{el.consignee}}</p>
+							<p>{{el.phone}}</p>
+							<p>{{el.regionName}}{{el.detailedAddress}}</p>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			
+			<div  style="height: 44px;width:100%;"></div>
+		</div>
+		<!--内容区-end-->
+		<div class="weui_tabbar address-bottom" >
+			<a href="javascript:void(0);" class="btn-default btn-add-address" ms-click="goCreate()">添加新地址</a>
+		</div>
+		<script>
+		  $(function() {
+		    FastClick.attach(document.body);
+		  });
+// 			$(document).on("click", "#show-confirm", function() {
+// 				$.confirm("确定要删除该地址吗?", "", function() {
+// 				  goDelete();
+// 				  $.toast("地址已经删除!");
+// 				}, function() {
+// 				  //取消操作
+// 				});
+// 			});
+			function toDelete(item){
+				$.confirm("确定要删除该地址吗?", "", function() {					
+	                  goDelete(item);	                  
+	                }, function() {
+	                  //取消操作
+	                });
+			}
+  		</script>
+</div>

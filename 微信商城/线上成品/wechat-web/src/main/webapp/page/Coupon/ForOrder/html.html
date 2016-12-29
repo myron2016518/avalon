@@ -1,0 +1,98 @@
+<div class="page-content" ms-controller="Coupon/ForOrder">
+
+ 
+	<div class="coupon-list listbody">
+	<div ms-repeat="obj">
+ 		<dl  ms-click='select(el)'>
+			<dt >
+					<h3>
+						<span>{{el.amount}}</span>元
+					</h3>
+					<p class="leftline">
+						<img class="img" src="images/line.png" alt="" />
+					</p>
+					<span class="coupon-txt">{{el.useCondition}}</span>
+				</dt>
+				<dd>
+					<ul>
+						<li>
+							<h3>{{el.title}}</h3>
+						</li>
+						<li>{{el.useDateStr}}</li>
+						<li>{{el.goodsType}}</li>
+					</ul>
+				</dd>
+				<img class="topico" src="images/linetop.png" alt="" />
+				<img class="linebottom" src="images/linebottom.png" alt="" />
+				<a href="javascript:void(0);" 
+					class="coupon-more icon-ico20"></a>
+				<div style="clear: both;"></div>
+			</dl>
+ 	
+	 
+	</div>
+	</div>
+		<!-- <dl>
+    <dt>
+
+      <h3><span>10</span>元</h3>
+      <p class="leftline"><img class="img" src="images/line.png" alt=""/></p>
+      <span class="coupon-txt">订单满198元使用元使用元使用</span></dt>
+    <dd>
+      <ul>
+        <li>
+          <h3>10元优惠券</h3>
+        </li>
+        <li>有效期：2016-10-1至2016-10-30</li>
+        <li>该券除预售、抢购商品不使用</li>
+      </ul>
+    </dd> <img class="topico" src="images/linetop.png" alt=""/> <img class="linebottom" src="images/linebottom.png" alt=""/>
+    <a href="javascript:void(0);"  ms-click="go_page('My/CouponInfo')" class="coupon-more icon-ico20"></a>
+    <div style="clear:both;"></div>
+  </dl>
+  <dl class="Expired">
+    <dt>
+      
+      <h3><span>10</span>元</h3>
+      <p class="leftline"><img class="img" src="images/line.png" alt=""/></p>
+      <span class="coupon-txt">订单满198元使用元使用元使用</span></dt>
+    <dd>
+      <ul>
+        <li>
+          <h3>10元优惠券</h3>
+        </li>
+        <li>有效期：2016-10-1至2016-10-30</li>
+        <li>该券除预售、抢购商品不使用</li>
+      </ul>
+    </dd> <img class="topico" src="images/linetop.png" alt=""/> <img class="linebottom" src="images/linebottom.png" alt=""/>
+    <a href="couponinfo1.html" class="coupon-more icon-ico20"></a>
+    <div class="coupon-ico"><img src="images/Expiredico.png" alt=""/></div>
+    <div style="clear:both;"></div>
+  </dl>
+  <dl class="Expired">
+    <dt>
+      
+      <h3><span>10</span>元</h3>
+      <p class="leftline"><img class="img" src="images/line.png" alt=""/></p>
+      <span class="coupon-txt">订单满198元使用元使用元使用</span></dt>
+    <dd>
+      <ul>
+        <li>
+          <h3>10元优惠券</h3>
+        </li>
+        <li>有效期：2016-10-1至2016-10-30</li>
+        <li>该券除预售、抢购商品不使用</li>
+      </ul>
+    </dd> <img class="topico" src="images/linetop.png" alt=""/> <img class="linebottom" src="images/linebottom.png" alt=""/>
+    <a href="couponinfo2.html" class="coupon-more icon-ico20"></a>
+    <div class="coupon-ico"><img src="images/Usedico.png" alt=""/></div>
+    <div style="clear:both;"></div>
+  </dl> -->
+	<div class="js" style="display: none;">
+		<div class="jsbody">
+			<a href="#" class="closeDialog"><img class="img"
+				src="images/Close.png" alt="" /></a>你已经是大麦场老朋友噢，前往APP
+		</div>
+	</div>
+
+</div>

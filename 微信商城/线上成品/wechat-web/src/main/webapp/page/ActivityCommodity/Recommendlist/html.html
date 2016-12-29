@@ -1,0 +1,66 @@
+<div class="page-content" ms-controller="ActivityCommodity/Recommendlist">
+
+
+    <div class="Tabbody">
+      <div class="pro-item">
+        <div class="info-img">
+				<img ms-attr-src="img(sub_list.activityImgPath)" width="100%" />
+				</div>
+        <div class="info-bar"><a href="javascript:;" ms-click="item_click(sub_list)">
+          <div class="pro-title">{{sub_list.activityTitle}}</div>
+          <div class="price"><span class="e-price">{{sub_list.discountPrice}}</span>
+          <span class="or-price">{{sub_list.price}}</span></div>
+          </a> </div>
+        <div class="pro-info2 end">
+          <dl ms-if="sub_list.panicDate.status=='2' && (sub_list.isAllowFlag!='1')">
+            <dt>
+              <div class="sale-percent">
+                <div class="s-dot" style="width:20%"></div>
+                <span class="s-per-text">已售{{sub_list.presaleCount}}件</span></div>
+            </dt>
+            <dd><a href="javascript:;"  > 已经抢完 </a></dd>
+          </dl>
+          <dl ms-if="sub_list.panicDate.status=='3'">
+            <dt>
+				<div class="sale-percent">
+					<div class="s-dot" style="width: 80%"></div>
+					<span class="s-per-text">谢谢您的关注！</span>
+				</div>
+			</dt>
+			<dd>
+				<a href="javascript:;" class="no">已结束</a>
+			</dd>
+          </dl>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+    </div>
+  <div class="selectedlist">
+		  	<div class="like-title" style="margin-top:40px;"><h3>更多推荐</h3></div>
+		    <div class="hprolist" ms-repeat="homeTabListItem">
+		      <dl>
+		        <dt><a href="javascript:void(0)" ms-click="clickRecommendCommodity(el)" ><img ms-attr-src="img(el.imgPath)" alt=""/>
+				  <div class="name">{{el.title1}}</div>
+				  </a>
+				</dt>
+		        
+		        
+			<dd>
+				<a href="javascript:void(0)" data-target="#half" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='1'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-click="openWindow(el,0)" ms-if="judgeEnough(el) && el.existExtra=='0'" class="icon-ico7 open-popup" ></a>
+				<a href="javascript:void(0)" data-target="#half-attr" ms-if="!judgeEnough(el)" class="icon-ico7 icon-disabled" ></a>
+				￥{{el.discountPrice}}
+			</dd>
+		      </dl>
+		    </div>
+	</div>
+	
+	  <!-- 购物车模块 -->
+	  <div ms-include-src="'page/Cart/Window/html.html'"></div>
+    <!--内容区--> 
+  </div>
+  
